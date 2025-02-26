@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://biddnldnktd0s"]
+[gd_scene load_steps=10 format=3 uid="uid://biddnldnktd0s"]
 
-[ext_resource type="Texture2D" uid="uid://7kupi7f1trhr" path="res://images/Augutussss.png" id="1_febnf"]
+[ext_resource type="Texture2D" uid="uid://dgdnn8vh2gf13" path="res://images/Augutussss.png" id="1_febnf"]
 [ext_resource type="Script" path="res://scripts/augusto.gd" id="1_vlu5a"]
+[ext_resource type="PackedScene" uid="uid://cb5ac33fsghhx" path="res://interactions/interacting_component.tscn" id="3_6d7db"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjogi"]
 atlas = ExtResource("1_febnf")
@@ -58,3 +59,5 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 85)
 shape = SubResource("RectangleShape2D_n1t88")
+
+[node name="InteractingComponent" parent="." instance=ExtResource("3_6d7db")]
