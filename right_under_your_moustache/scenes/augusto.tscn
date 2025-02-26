@@ -1,7 +1,60 @@
-[gd_scene format=3 uid="uid://biddnldnktd0s"]
+[gd_scene load_steps=9 format=3 uid="uid://biddnldnktd0s"]
+
+[ext_resource type="Texture2D" uid="uid://7kupi7f1trhr" path="res://images/Augutussss.png" id="1_febnf"]
+[ext_resource type="Script" path="res://scripts/augusto.gd" id="1_vlu5a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjogi"]
+atlas = ExtResource("1_febnf")
+region = Rect2(0, 0, 427, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwu15"]
+atlas = ExtResource("1_febnf")
+region = Rect2(427, 0, 427, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xd1bb"]
+atlas = ExtResource("1_febnf")
+region = Rect2(854, 0, 427, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cixw"]
+atlas = ExtResource("1_febnf")
+region = Rect2(1281, 0, 427, 420)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qkg8w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjogi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwu15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xd1bb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cixw")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1t88"]
+size = Vector2(176, 218)
 
 [node name="augusto" type="CharacterBody2D"]
+script = ExtResource("1_vlu5a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qkg8w")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 85)
+shape = SubResource("RectangleShape2D_n1t88")
