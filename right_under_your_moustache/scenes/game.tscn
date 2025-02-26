@@ -1,7 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://bkb5dnxash1w2"]
 
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://bs3ypyomjgpyq" path="res://images/sprite_blooks.png" id="1_c76tl"]
 [ext_resource type="Texture2D" uid="uid://b341ovrycbbct" path="res://images/background.png" id="1_foirs"]
+=======
+[ext_resource type="Texture2D" uid="uid://cmr5nqpv8x8yo" path="res://images/sprite_blooks.png" id="1_c76tl"]
+>>>>>>> refs/remotes/origin/main
 [ext_resource type="PackedScene" uid="uid://biddnldnktd0s" path="res://scenes/augusto.tscn" id="2_x5d4i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_prfob"]
