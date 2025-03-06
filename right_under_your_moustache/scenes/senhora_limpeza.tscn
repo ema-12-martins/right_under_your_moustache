@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://bu7byw51agiqh"]
+
+[ext_resource type="Script" uid="uid://c6ilemtgkjbwe" path="res://scripts/senhora_limpeza.gd" id="1_qnk77"]
+[ext_resource type="Texture2D" uid="uid://dgdnn8vh2gf13" path="res://images/Augutussss.png" id="2_4cxgb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie2f6"]
+atlas = ExtResource("2_4cxgb")
+region = Rect2(9, 0, 425, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2uji"]
+atlas = ExtResource("2_4cxgb")
+region = Rect2(434, 0, 425, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84jg4"]
+atlas = ExtResource("2_4cxgb")
+region = Rect2(859, 0, 425, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01spg"]
+atlas = ExtResource("2_4cxgb")
+region = Rect2(1284, 0, 425, 420)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e6sao"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie2f6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2uji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84jg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01spg")
+}],
+"loop": true,
+"name": &"run",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnk77"]
+size = Vector2(208, 243)
+
+[node name="SenhoraLimpeza" type="CharacterBody2D" node_paths=PackedStringArray("patrol_points")]
+script = ExtResource("1_qnk77")
+patrol_points = [NodePath("Marker2D"), NodePath("Marker2D2")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(97.5, -182)
+sprite_frames = SubResource("SpriteFrames_e6sao")
+animation = &"run"
+frame_progress = 0.166742
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(115, -111.5)
+shape = SubResource("RectangleShape2D_qnk77")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-584, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(681, 0)
