@@ -101,7 +101,7 @@ script = ExtResource("4_kxxrh")
 
 [node name="Interactable" parent="Elevators/elevator_1" instance=ExtResource("6_op3qk")]
 position = Vector2(1367, -198)
-interact_name = "Press W to go up."
+interact_name = "Press W or ⬆ to go up."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevators/elevator_1/Interactable"]
 position = Vector2(0.5, -12.5)
@@ -113,7 +113,7 @@ script = ExtResource("4_kxxrh")
 
 [node name="Interactable" parent="Elevators/elevator_2" instance=ExtResource("6_op3qk")]
 position = Vector2(1367, -198)
-interact_name = "Press S to go down."
+interact_name = "Press S or ⬇ to go down."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevators/elevator_2/Interactable"]
 position = Vector2(0.5, -12.5)
