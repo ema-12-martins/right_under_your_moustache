@@ -11,7 +11,10 @@ func _input(event: InputEvent) -> void:
 			can_interact = false
 			interact_label.hide()
 			
-			await current_interactions[0].interact.call()
+			# To pass the pressed key
+			var key_pressed = event.as_text()
+			
+			await current_interactions[0].interact.call(key_pressed)
 			
 			can_interact = true
 

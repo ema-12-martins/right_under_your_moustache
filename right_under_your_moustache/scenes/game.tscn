@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://uiawry51ph4o" path="res://images/background.png" id="1_foirs"]
 [ext_resource type="Texture2D" uid="uid://cb3xix8ip5c7o" path="res://images/outlines.png" id="2_0e0cp"]
 [ext_resource type="PackedScene" uid="uid://biddnldnktd0s" path="res://scenes/augusto.tscn" id="2_x5d4i"]
-[ext_resource type="Script" path="res://scripts/test.gd" id="4_kxxrh"]
+[ext_resource type="Script" uid="uid://c8ivj5p08w25r" path="res://scripts/test.gd" id="4_kxxrh"]
 [ext_resource type="Texture2D" uid="uid://d2g7fvn7mndpk" path="res://images/shadow_gradient.png" id="4_o3pkp"]
 [ext_resource type="PackedScene" uid="uid://chjnxo10743q0" path="res://interactions/Interactable.tscn" id="6_op3qk"]
 
@@ -64,11 +64,11 @@ sources/0 = SubResource("TileSetAtlasSource_prfob")
 sources/1 = SubResource("TileSetAtlasSource_idsoe")
 sources/4 = SubResource("TileSetAtlasSource_dt2c2")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6aqpo"]
-distance = -222.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26yaj"]
 size = Vector2(581, 577)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6aqpo"]
+distance = -222.0
 
 [node name="Game" type="Node2D"]
 
@@ -92,21 +92,25 @@ position = Vector2(1, -109)
 zoom = Vector2(0.3, 0.3)
 position_smoothing_enabled = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, -126)
+[node name="Elevators" type="Node" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-6, -90)
-shape = SubResource("WorldBoundaryShape2D_6aqpo")
-
-[node name="test" type="StaticBody2D" parent="."]
+[node name="elevator_1" type="StaticBody2D" parent="Elevators"]
 position = Vector2(-2875, -80)
 script = ExtResource("4_kxxrh")
 
-[node name="Interactable" parent="test" instance=ExtResource("6_op3qk")]
+[node name="Interactable" parent="Elevators/elevator_1" instance=ExtResource("6_op3qk")]
 position = Vector2(1367, -198)
-interact_name = "E To Up"
+interact_name = "Press W to go up."
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="test/Interactable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elevators/elevator_1/Interactable"]
 position = Vector2(0.5, -12.5)
 shape = SubResource("RectangleShape2D_26yaj")
+
+[node name="Levels" type="Node" parent="."]
+
+[node name="level_0" type="StaticBody2D" parent="Levels"]
+position = Vector2(0, -126)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/level_0"]
+position = Vector2(-6, -90)
+shape = SubResource("WorldBoundaryShape2D_6aqpo")
