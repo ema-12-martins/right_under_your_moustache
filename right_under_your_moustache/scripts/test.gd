@@ -2,7 +2,8 @@ extends StaticBody2D
 
 @onready var interactable: Area2D = $Interactable
 @onready var augusto: CharacterBody2D = $"../../augusto"
-@onready var collision_shape: CollisionShape2D = augusto.get_node("CollisionShape2D")
+@onready var collision_shape_level_0: CollisionShape2D = $"../../Levels/level_0/CollisionShape2D"
+@onready var collision_shape_level_1: CollisionShape2D = $"../../Levels/level_1/CollisionShape2D"
 
 var level = 1
 
@@ -14,15 +15,15 @@ func _on_interact(key_pressed: String):
 	print("Key pressed: " + key_pressed)
 
 	if level == 0 and key_pressed == "W":
-		# Desabilita a colisão durante o movimento
-		collision_shape.disabled = true
 		augusto.position.y -= 800
 		level += 1
-		# Reabilita a colisão após o movimento
-		collision_shape.disabled = false
+		collision_shape_level_0.disabled = true
+		collision_shape_level_1.disabled = false
 		
 	elif level == 1 and key_pressed == "S":
-		collision_shape.disabled = true
 		augusto.position.y += 800
 		level -= 1
-		collision_shape.disabled = false
+		collision_shape_level_0.disabled = false
+		collision_shape_level_1.disabled = true
+		
+		
