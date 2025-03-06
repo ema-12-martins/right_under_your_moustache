@@ -47,9 +47,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnk77"]
 size = Vector2(208, 243)
 
-[node name="SenhoraLimpeza" type="CharacterBody2D" node_paths=PackedStringArray("patrol_points")]
+[node name="SenhoraLimpeza" type="CharacterBody2D"]
 script = ExtResource("1_qnk77")
-patrol_points = [NodePath("Marker2D"), NodePath("Marker2D2")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(97.5, -182)
@@ -60,9 +59,3 @@ frame_progress = 0.166742
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(115, -111.5)
 shape = SubResource("RectangleShape2D_qnk77")
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(-584, 0)
-
-[node name="Marker2D2" type="Marker2D" parent="."]
-position = Vector2(681, 0)
