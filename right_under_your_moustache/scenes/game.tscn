@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://uiawry51ph4o" path="res://images/background.png" id="1_foirs"]
 [ext_resource type="Texture2D" uid="uid://cb3xix8ip5c7o" path="res://images/outlines.png" id="2_0e0cp"]
 [ext_resource type="PackedScene" uid="uid://biddnldnktd0s" path="res://scenes/augusto.tscn" id="2_x5d4i"]
+[ext_resource type="Script" path="res://scripts/test.gd" id="4_kxxrh"]
+[ext_resource type="Texture2D" uid="uid://dgdnn8vh2gf13" path="res://images/Augutussss.png" id="5_7rmdr"]
+[ext_resource type="PackedScene" uid="uid://chjnxo10743q0" path="res://interactions/Interactable.tscn" id="6_op3qk"]
 [ext_resource type="Texture2D" uid="uid://d2g7fvn7mndpk" path="res://images/shadow_gradient.png" id="4_o3pkp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_prfob"]
@@ -65,6 +68,9 @@ sources/4 = SubResource("TileSetAtlasSource_dt2c2")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6aqpo"]
 distance = -222.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ogdk"]
+radius = 858.196
+
 [node name="Game" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -92,3 +98,17 @@ position = Vector2(0, -135)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-6, -90)
 shape = SubResource("WorldBoundaryShape2D_6aqpo")
+
+[node name="test" type="StaticBody2D" parent="."]
+script = ExtResource("4_kxxrh")
+
+[node name="Augutussss" type="Sprite2D" parent="test"]
+position = Vector2(1332, -207)
+texture = ExtResource("5_7rmdr")
+
+[node name="Interactable" parent="test" instance=ExtResource("6_op3qk")]
+position = Vector2(1367, -198)
+interact_name = "Olá"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test/Interactable"]
+shape = SubResource("CircleShape2D_1ogdk")
