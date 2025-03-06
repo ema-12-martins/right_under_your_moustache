@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bkb5dnxash1w2"]
+[gd_scene load_steps=16 format=3 uid="uid://bkb5dnxash1w2"]
 
 [ext_resource type="Texture2D" uid="uid://bax4qsx84ekwh" path="res://images/sprite_blooks.png" id="1_c76tl"]
 [ext_resource type="Texture2D" uid="uid://uiawry51ph4o" path="res://images/background.png" id="1_foirs"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c8ivj5p08w25r" path="res://scripts/test.gd" id="4_kxxrh"]
 [ext_resource type="Texture2D" uid="uid://d2g7fvn7mndpk" path="res://images/shadow_gradient.png" id="4_o3pkp"]
 [ext_resource type="PackedScene" uid="uid://chjnxo10743q0" path="res://interactions/Interactable.tscn" id="6_op3qk"]
+[ext_resource type="Script" uid="uid://ca3mp2ij4vj0u" path="res://scripts/levels.gd" id="8_gee14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_prfob"]
 texture = ExtResource("1_foirs")
@@ -119,6 +120,7 @@ position = Vector2(0.5, -12.5)
 shape = SubResource("RectangleShape2D_26yaj")
 
 [node name="Levels" type="Node" parent="."]
+script = ExtResource("8_gee14")
 
 [node name="level_0" type="StaticBody2D" parent="Levels"]
 position = Vector2(501, -131)
