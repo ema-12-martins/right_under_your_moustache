@@ -6,13 +6,22 @@ extends CharacterBody2D
 var current_point_index = 0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var detection_area: Area2D = $Area2D
+@onready var detection_area_display: Polygon2D = $Polygon2D
 
 func _ready() -> void:
-	draw()
 	if patrol_points.size() == 0:
 		print("No patrol points assigned!")
+	detection_area.body_entered.connect(_on_player_detected)
 
-func _process(delta: float) -> void:
+func _on_player_detected(body: Node2D) -> void:
+	if body.name == "augusto":
+		call_deferred("reload_scene")
+
+func reload_scene():
+	get_tree().reload_current_scene()
+
+func _process(_delta: float) -> void:
 	patrol()
 	move_and_slide()
 
@@ -22,15 +31,15 @@ func patrol() -> void:
 		var target = patrol_points[current_point_index].position
 		velocity = (target - position).normalized() * speed
 		if velocity.x < 0:
+			detection_area_display.scale.x = -1
+			detection_area.scale.x = -1
 			animated_sprite.flip_h = true
 		else:
+			detection_area_display.scale.x = 1
+			detection_area.scale.x = 1
 			animated_sprite.flip_h = false
 		
 		if position.distance_to(target) < 10.0:
 			current_point_index += 1
 			if current_point_index >= patrol_points.size():
 				current_point_index = 0
-
-func draw():
-	for point in patrol_points:
-		draw_circle(point.position, 5, Color(1, 0, 0))  # Red circles

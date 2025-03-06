@@ -45,17 +45,27 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnk77"]
-size = Vector2(208, 243)
+size = Vector2(266, 361)
 
 [node name="SenhoraLimpeza" type="CharacterBody2D"]
 script = ExtResource("1_qnk77")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(97.5, -182)
 sprite_frames = SubResource("SpriteFrames_e6sao")
 animation = &"run"
 frame_progress = 0.166742
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(115, -111.5)
+position = Vector2(0, 14.5)
 shape = SubResource("RectangleShape2D_qnk77")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-3505.89, 0)
+scale = Vector2(31.1971, 1)
+polygon = PackedVector2Array(116.642, -71, 132.989, -166, 132.989, 195)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.351563, 0.351563, 0.351563, 0.4)
+polygon = PackedVector2Array(133, -71, 643, -166, 643, 195)
