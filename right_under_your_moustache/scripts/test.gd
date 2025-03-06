@@ -15,15 +15,20 @@ func _on_interact(key_pressed: String):
 	print("Key pressed: " + key_pressed)
 
 	if level == 0 and key_pressed == "W":
-		augusto.position.y -= 800
-		level += 1
+		#First, change visibilities to be possible to land the character
 		collision_shape_level_0.disabled = true
 		collision_shape_level_1.disabled = false
 		
+		augusto.position.y -= 800
+		level += 1
+		
+		
 	elif level == 1 and key_pressed == "S":
-		augusto.position.y += 800
-		level -= 1
 		collision_shape_level_0.disabled = false
 		collision_shape_level_1.disabled = true
+		
+		augusto.position.y += 800
+		level -= 1
+		
 		
 		
