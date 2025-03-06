@@ -13,7 +13,6 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 
 func _on_interact(key_pressed: String):
-	print(key_pressed)
 
 	if levels.level == 0 and (key_pressed == "W" or key_pressed == "Up"):
 		#First, change visibilities to be possible to land the character
