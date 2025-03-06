@@ -8,6 +8,7 @@ var current_point_index = 0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
+	draw()
 	if patrol_points.size() == 0:
 		print("No patrol points assigned!")
 
@@ -30,6 +31,6 @@ func patrol() -> void:
 			if current_point_index >= patrol_points.size():
 				current_point_index = 0
 
-func _draw():
+func draw():
 	for point in patrol_points:
 		draw_circle(point.position, 5, Color(1, 0, 0))  # Red circles

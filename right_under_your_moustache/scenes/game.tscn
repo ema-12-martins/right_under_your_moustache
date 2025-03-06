@@ -128,7 +128,6 @@ shape = SubResource("RectangleShape2D_26yaj")
 position = Vector2(501, -131)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/level_0"]
-visible = false
 position = Vector2(-6, -90)
 shape = SubResource("WorldBoundaryShape2D_6aqpo")
 
