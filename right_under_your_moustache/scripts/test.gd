@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-@onready var augutussss: Sprite2D = $Augutussss
 @onready var interactable: Area2D = $Interactable
 
 # Called when the node enters the scene tree for the first time.
