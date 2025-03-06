@@ -109,8 +109,15 @@ shape = SubResource("RectangleShape2D_26yaj")
 [node name="Levels" type="Node" parent="."]
 
 [node name="level_0" type="StaticBody2D" parent="Levels"]
-position = Vector2(0, -126)
+position = Vector2(501, -131)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/level_0"]
 position = Vector2(-6, -90)
+shape = SubResource("WorldBoundaryShape2D_6aqpo")
+
+[node name="level_1" type="StaticBody2D" parent="Levels"]
+position = Vector2(899, -850)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/level_1"]
+position = Vector2(-530, -81)
 shape = SubResource("WorldBoundaryShape2D_6aqpo")

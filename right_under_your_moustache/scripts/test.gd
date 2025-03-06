@@ -3,7 +3,7 @@ extends StaticBody2D
 @onready var interactable: Area2D = $Interactable
 @onready var augusto: CharacterBody2D = $"../../augusto"
 
-var level = 0
+var level = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
