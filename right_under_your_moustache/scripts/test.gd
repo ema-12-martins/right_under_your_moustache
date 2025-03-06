@@ -5,7 +5,8 @@ extends StaticBody2D
 @onready var collision_shape_level_0: CollisionShape2D = $"../../Levels/level_0/CollisionShape2D"
 @onready var collision_shape_level_1: CollisionShape2D = $"../../Levels/level_1/CollisionShape2D"
 
-var level = 1
+@onready var levels: Node = $"../../Levels"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,21 +15,22 @@ func _ready() -> void:
 func _on_interact(key_pressed: String):
 	print("Key pressed: " + key_pressed)
 
-	if level == 0 and key_pressed == "W":
+	if levels.level == 0 and key_pressed == "W":
 		#First, change visibilities to be possible to land the character
 		collision_shape_level_0.disabled = true
 		collision_shape_level_1.disabled = false
 		
-		augusto.position.y -= 800
-		level += 1
+		augusto.position.y -= 700
+		levels.level += 1
+		print(levels.level)
 		
 		
-	elif level == 1 and key_pressed == "S":
+	elif levels.level == 1 and key_pressed == "S":
 		collision_shape_level_0.disabled = false
 		collision_shape_level_1.disabled = true
 		
 		augusto.position.y += 800
-		level -= 1
-		
+		levels.level -= 1
+		print(levels.level)
 		
 		
