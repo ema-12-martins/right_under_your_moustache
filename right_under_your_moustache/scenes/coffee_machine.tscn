@@ -18,4 +18,17 @@ script = ExtResource("2_y23ww")
 position = Vector2(5.5, 0)
 shape = SubResource("RectangleShape2D_vqwbw")
 
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -833.0
+offset_top = -1006.0
+offset_right = 849.0
+offset_bottom = -814.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 140
+text = "Press Enter to get coffee."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
