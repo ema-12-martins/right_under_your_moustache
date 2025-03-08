@@ -155,7 +155,3 @@ shape = SubResource("WorldBoundaryShape2D_6aqpo")
 [node name="coffee_machine" parent="CoffeeMachines" instance=ExtResource("10_vtaks")]
 position = Vector2(-850, -983)
 scale = Vector2(0.359865, 0.359865)
-
-[node name="coffee_machine2" parent="CoffeeMachines" instance=ExtResource("10_vtaks")]
-position = Vector2(-850, -983)
-scale = Vector2(0.359865, 0.359865)
