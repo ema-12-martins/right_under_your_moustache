@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://s0d5lbvc0ff0"]
+
+[ext_resource type="Texture2D" uid="uid://c406ua6gse3x1" path="res://images/coffee.png" id="1_vqwbw"]
+[ext_resource type="Script" uid="uid://xa2w0p8xggaq" path="res://scripts/coffee_area.gd" id="2_y23ww"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqwbw"]
+size = Vector2(779, 1518)
+
+[node name="coffee_machine" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vqwbw")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_y23ww")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5.5, 0)
+shape = SubResource("RectangleShape2D_vqwbw")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
