@@ -3,6 +3,7 @@ extends Area2D
 @onready var label: Label = $"../Label"
 
 @onready var augusto: CharacterBody2D = $"../../../augusto"
+@onready var speed_timer: Timer = $"../../../augusto/speed_timer"
 
 var inside_area = false
 
@@ -21,3 +22,4 @@ func _process(delta: float) -> void:
 		if augusto.velocity_speed == false:
 			augusto.SPEED += 800
 			augusto.velocity_speed = true
+			speed_timer.start()
