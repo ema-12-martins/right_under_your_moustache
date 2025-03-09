@@ -11,8 +11,12 @@ script = ExtResource("1_cvpoc")
 position = Vector2(-1, 0)
 polygon = PackedVector2Array(-839, 767, -396, 767, -69, 71)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="flip_camera" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.352941, 0.352941, 0.352941, 0.4)
 polygon = PackedVector2Array(-82, 74, -819, 757, -396, 757)
+
+[connection signal="timeout" from="flip_camera" to="." method="_on_flip_camera_timeout"]
