@@ -7,5 +7,5 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 
 func _on_interact(key_pressed: String):
-	if key_pressed == "W":
+	if key_pressed == "Enter":
 		print("hello")

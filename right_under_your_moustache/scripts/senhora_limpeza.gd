@@ -19,6 +19,7 @@ func _on_player_detected(body: Node2D) -> void:
 		call_deferred("reload_scene")
 
 func reload_scene():
+	Global.last_world_position = Vector2(0, 0)
 	get_tree().reload_current_scene()
 
 func _process(_delta: float) -> void:
