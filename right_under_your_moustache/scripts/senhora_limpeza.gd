@@ -15,7 +15,7 @@ func _ready() -> void:
 	detection_area.body_entered.connect(_on_player_detected)
 
 func _on_player_detected(body: Node2D) -> void:
-	if body.name == "augusto":
+	if body.name == "augusto" and body.modulate != Color(0.5, 0.5, 0.5, 1.0):
 		call_deferred("reload_scene")
 
 func reload_scene():

@@ -6,7 +6,11 @@ const JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+var disable_player_movement = false
+
 func _physics_process(delta: float) -> void:
+	if disable_player_movement:
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -14,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	#Get the input directions: 0, -1 , 1
 	var direction := Input.get_axis("left", "right")
 	
-	#Play animations
+		#Play animations
 	if direction == 0:
 		animated_sprite.play("idle")
 	else:
