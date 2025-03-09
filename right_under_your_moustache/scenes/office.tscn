@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b23r2ubpasokq"]
+
+[node name="Office" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]

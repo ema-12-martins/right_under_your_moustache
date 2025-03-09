@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var speed = 100.0
+@export var speed = 200.0
 @export var patrol_points: Array[Marker2D] = []
 var current_point_index = 0
 
