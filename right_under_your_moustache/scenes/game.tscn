@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bkb5dnxash1w2"]
+[gd_scene load_steps=20 format=3 uid="uid://bkb5dnxash1w2"]
 
 [ext_resource type="Texture2D" uid="uid://bax4qsx84ekwh" path="res://images/sprite_blooks.png" id="1_c76tl"]
 [ext_resource type="Texture2D" uid="uid://uiawry51ph4o" path="res://images/background.png" id="1_foirs"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://bhatpi5j64g1b" path="res://scripts/speed_timer.gd" id="7_kvpfn"]
 [ext_resource type="Script" uid="uid://ca3mp2ij4vj0u" path="res://scripts/levels.gd" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://s0d5lbvc0ff0" path="res://scenes/coffee_machine.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://p7im8cqmkuvf" path="res://scenes/camera.tscn" id="12_dinhu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_prfob"]
 texture = ExtResource("1_foirs")
@@ -160,5 +161,10 @@ shape = SubResource("WorldBoundaryShape2D_6aqpo")
 [node name="coffee_machine" parent="CoffeeMachines" instance=ExtResource("10_vtaks")]
 position = Vector2(-850, -983)
 scale = Vector2(0.359865, 0.359865)
+
+[node name="SecurityCameras" type="Node" parent="."]
+
+[node name="camera" parent="SecurityCameras" instance=ExtResource("12_dinhu")]
+position = Vector2(1095, -761)
 
 [connection signal="timeout" from="augusto/speed_timer" to="augusto/speed_timer" method="_on_timeout"]
