@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bu7byw51agiqh" path="res://scenes/senhora_limpeza.tscn" id="5_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://chjnxo10743q0" path="res://interactions/Interactable.tscn" id="6_op3qk"]
 [ext_resource type="Script" uid="uid://bhatpi5j64g1b" path="res://scripts/speed_timer.gd" id="7_kvpfn"]
-[ext_resource type="Script" uid="uid://bb5kra5a4gdxi" path="res://scripts/office.gd" id="7_vtaks"]
+[ext_resource type="Script" uid="uid://bb5kra5a4gdxi" path="res://scripts/officedoor.gd" id="7_vtaks"]
 [ext_resource type="Script" uid="uid://ca3mp2ij4vj0u" path="res://scripts/levels.gd" id="8_gee14"]
 [ext_resource type="Script" uid="uid://gjdibkydnmuw" path="res://scripts/hidy_place.gd" id="9_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://s0d5lbvc0ff0" path="res://scenes/coffee_machine.tscn" id="10_vtaks"]
@@ -138,7 +138,7 @@ position = Vector2(2004, -1020)
 script = ExtResource("7_vtaks")
 
 [node name="Interactable" parent="Door" instance=ExtResource("6_op3qk")]
-interact_name = "Press W to enter the office"
+interact_name = "Press Enter to enter the office"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Interactable"]
 position = Vector2(-1, 0.5)

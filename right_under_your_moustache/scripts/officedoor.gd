@@ -8,5 +8,5 @@ func _ready() -> void:
 
 func _on_interact(key_pressed: String):
 	if key_pressed == "Enter":
-		Global.last_office_position = $"../augusto".position
-		get_tree().change_scene_to_file("res://scenes/game.tscn")
+		Global.last_world_position = $"../augusto".position
+		get_tree().change_scene_to_file("res://scenes/office.tscn")

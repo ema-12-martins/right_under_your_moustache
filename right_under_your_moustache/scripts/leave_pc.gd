@@ -7,6 +7,5 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 
 func _on_interact(key_pressed: String):
-	if key_pressed == "Enter":
-		Global.last_office_position = $"../augusto".position
-		get_tree().change_scene_to_file("res://scenes/game.tscn")
+	if key_pressed == "Escape":
+		get_tree().change_scene_to_file("res://scenes/office.tscn")
