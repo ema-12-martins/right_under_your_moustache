@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bkb5dnxash1w2"]
+[gd_scene load_steps=26 format=4 uid="uid://bkb5dnxash1w2"]
 
 [ext_resource type="Texture2D" uid="uid://bax4qsx84ekwh" path="res://images/sprite_blooks.png" id="1_c76tl"]
 [ext_resource type="Texture2D" uid="uid://uiawry51ph4o" path="res://images/background.png" id="1_foirs"]
@@ -80,6 +80,10 @@ size = Vector2(575, 596.5)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6aqpo"]
 distance = -222.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ir15t"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ca42v"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ir15t")
@@ -202,6 +206,21 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/level_1"]
 position = Vector2(-530, -81)
 shape = SubResource("WorldBoundaryShape2D_6aqpo")
+
+[node name="limit_left" type="StaticBody2D" parent="Levels"]
+position = Vector2(-1902, -223)
+rotation = -4.71327
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/limit_left"]
+shape = SubResource("WorldBoundaryShape2D_ir15t")
+
+[node name="limit_right" type="StaticBody2D" parent="Levels"]
+position = Vector2(2497, -287)
+rotation = -1.56539
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/limit_right"]
+position = Vector2(1, -2)
+shape = SubResource("WorldBoundaryShape2D_ca42v")
 
 [node name="CoffeeMachines" type="Node" parent="."]
 
