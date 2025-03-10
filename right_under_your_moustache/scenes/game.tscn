@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bkb5dnxash1w2"]
+[gd_scene load_steps=28 format=4 uid="uid://bkb5dnxash1w2"]
 
 [ext_resource type="Texture2D" uid="uid://bax4qsx84ekwh" path="res://images/sprite_blooks.png" id="1_c76tl"]
 [ext_resource type="Texture2D" uid="uid://uiawry51ph4o" path="res://images/background.png" id="1_foirs"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://gjdibkydnmuw" path="res://scripts/hidy_place.gd" id="9_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://s0d5lbvc0ff0" path="res://scenes/coffee_machine.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://p7im8cqmkuvf" path="res://scenes/camera.tscn" id="12_dinhu"]
+[ext_resource type="Script" uid="uid://dsix74jxkc8ey" path="res://scripts/exit.gd" id="16_ca42v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trtic"]
 texture = ExtResource("1_foirs")
@@ -84,6 +85,9 @@ distance = -222.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ir15t"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ca42v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rysoc"]
+size = Vector2(311, 387)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ir15t")
@@ -232,5 +236,13 @@ scale = Vector2(0.359865, 0.359865)
 
 [node name="camera" parent="SecurityCameras" instance=ExtResource("12_dinhu")]
 position = Vector2(1095, -761)
+
+[node name="Exit" type="Area2D" parent="."]
+position = Vector2(1992, -188)
+script = ExtResource("16_ca42v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+position = Vector2(2.5, -5.5)
+shape = SubResource("RectangleShape2D_rysoc")
 
 [connection signal="timeout" from="augusto/speed_timer" to="augusto/speed_timer" method="_on_timeout"]

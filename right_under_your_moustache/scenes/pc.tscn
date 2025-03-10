@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://b3tpeu8gntp5f"]
+[gd_scene load_steps=18 format=4 uid="uid://b3tpeu8gntp5f"]
 
 [ext_resource type="Script" uid="uid://blwkc82mtnxyc" path="res://scripts/mouse.gd" id="1_5rl7t"]
 [ext_resource type="Texture2D" uid="uid://uiawry51ph4o" path="res://images/background.png" id="1_heffb"]
@@ -78,10 +78,8 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thpu4"]
 size = Vector2(210, 165)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7a7w"]
-size = Vector2(1350, 810)
-
 [node name="PC" type="Node2D"]
+script = ExtResource("9_dbnjo")
 
 [node name="TileMap" type="Node2D" parent="."]
 
@@ -151,6 +149,12 @@ shape = SubResource("RectangleShape2D_thpu4")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_5rl7t")
 
+[node name="Polygon2D2" type="Polygon2D" parent="CharacterBody2D"]
+position = Vector2(19, 19)
+scale = Vector2(1.08333, 1.08333)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-24, -24, 6, 36, 11, 11, 36, 6)
+
 [node name="Polygon2D" type="Polygon2D" parent="CharacterBody2D"]
 position = Vector2(19, 19)
 polygon = PackedVector2Array(-24, -24, 6, 36, 11, 11, 36, 6)
@@ -162,11 +166,3 @@ polygon = PackedVector2Array(-30, -30, 30, 0, 5, 5, 0, 30)
 [node name="InteractingComponent" parent="CharacterBody2D" instance=ExtResource("8_38kjl")]
 position = Vector2(19, 19)
 scale = Vector2(0.8, 0.8)
-
-[node name="FullScreen" type="StaticBody2D" parent="."]
-script = ExtResource("9_dbnjo")
-
-[node name="Interactable" parent="FullScreen" instance=ExtResource("6_dbnjo")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FullScreen/Interactable"]
-shape = SubResource("RectangleShape2D_w7a7w")

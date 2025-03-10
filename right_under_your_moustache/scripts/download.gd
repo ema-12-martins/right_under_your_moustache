@@ -7,5 +7,5 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 
 func _on_interact(key_pressed: String):
-	if key_pressed == "Left Mouse Button":
-		get_tree().change_scene_to_file("res://scenes/exams_folder.tscn")
+	Global.got_exam = true
+	$"../Label".visible = true
