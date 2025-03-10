@@ -109,7 +109,7 @@ tile_set = SubResource("TileSet_uhg6h")
 
 [node name="augusto" parent="." instance=ExtResource("2_x5d4i")]
 z_index = 1
-position = Vector2(1, -205)
+position = Vector2(2302, -188)
 
 [node name="Camera2D" type="Camera2D" parent="augusto"]
 position = Vector2(0, 96)
