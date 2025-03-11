@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://bkb5dnxash1w2"]
+[gd_scene load_steps=31 format=4 uid="uid://bkb5dnxash1w2"]
 
 [ext_resource type="Texture2D" uid="uid://bax4qsx84ekwh" path="res://images/sprite_blooks.png" id="1_c76tl"]
 [ext_resource type="Texture2D" uid="uid://uiawry51ph4o" path="res://images/background.png" id="1_foirs"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://gjdibkydnmuw" path="res://scripts/hidy_place.gd" id="9_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://s0d5lbvc0ff0" path="res://scenes/coffee_machine.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://p7im8cqmkuvf" path="res://scenes/camera.tscn" id="12_dinhu"]
+[ext_resource type="PackedScene" uid="uid://3ru1nw6tk0sl" path="res://scenes/bin.tscn" id="16_264po"]
 [ext_resource type="Script" uid="uid://dsix74jxkc8ey" path="res://scripts/exit.gd" id="16_ca42v"]
 [ext_resource type="Texture2D" uid="uid://b7aykbx4rqebv" path="res://images/key.png" id="17_rysoc"]
 [ext_resource type="Script" uid="uid://d12wjbgu0hqk6" path="res://scripts/hud.gd" id="17_ssvqc"]
@@ -239,6 +240,11 @@ scale = Vector2(0.359865, 0.359865)
 
 [node name="camera" parent="SecurityCameras" instance=ExtResource("12_dinhu")]
 position = Vector2(1095, -761)
+
+[node name="Bins" type="Node" parent="."]
+
+[node name="Bin" parent="Bins" instance=ExtResource("16_264po")]
+position = Vector2(-2298, -122)
 
 [node name="Exit" type="Area2D" parent="."]
 position = Vector2(1992, -188)
