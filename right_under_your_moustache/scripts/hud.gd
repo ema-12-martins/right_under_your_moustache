@@ -4,6 +4,7 @@ extends CanvasLayer
 
 func _ready():
 	update_keys_label()
+	Global.keys_updated.connect(update_keys_label)
 
 func update_keys_label():
 	keys.text = str(Global.keys) + "/1"
