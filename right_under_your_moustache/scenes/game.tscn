@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://3ru1nw6tk0sl" path="res://scenes/bin.tscn" id="16_264po"]
 [ext_resource type="Script" uid="uid://dsix74jxkc8ey" path="res://scripts/exit.gd" id="16_ca42v"]
 [ext_resource type="Texture2D" uid="uid://b7aykbx4rqebv" path="res://images/key.png" id="17_rysoc"]
-[ext_resource type="Script" uid="uid://d12wjbgu0hqk6" path="res://scripts/hud.gd" id="17_ssvqc"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="17_ssvqc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trtic"]
 texture = ExtResource("1_foirs")
@@ -283,16 +283,9 @@ position = Vector2(2004, -1020)
 script = ExtResource("7_vtaks")
 
 [node name="Interactable" parent="Door/StaticBody" instance=ExtResource("6_op3qk")]
-interact_name = "Press Enter to enter the office."
+interact_name = "You need a key to enter the office"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/StaticBody/Interactable"]
-position = Vector2(-1, 0.5)
-shape = SubResource("RectangleShape2D_0tnpc")
-
-[node name="Interactable2" parent="Door/StaticBody" instance=ExtResource("6_op3qk")]
-interact_name = "Find the key to unlock this door."
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/StaticBody/Interactable2"]
 position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_0tnpc")
 
