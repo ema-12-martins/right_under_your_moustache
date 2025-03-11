@@ -13,6 +13,7 @@ func _on_body_entered(body: Node2D) -> void:
 		call_deferred("reload_scene")
 
 func reload_scene():
+	Global.keys = 0
 	Global.last_world_position = Vector2(0, 0)
 	get_tree().reload_current_scene()
 	
