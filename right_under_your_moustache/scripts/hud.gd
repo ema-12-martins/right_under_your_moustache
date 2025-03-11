@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var keys: Label = $Control/MarginContainer/HBoxContainer/keys
+@onready var keys: Label = $"Control/MarginContainer-Keys/HBoxContainer/keys"
 
 func _ready():
 	update_keys_label()
