@@ -145,17 +145,6 @@ position = Vector2(-200, -915)
 [node name="Marker2D1" type="Marker2D" parent="CleaningLady"]
 position = Vector2(1200, -915)
 
-[node name="Door" type="StaticBody2D" parent="."]
-position = Vector2(2004, -1020)
-script = ExtResource("7_vtaks")
-
-[node name="Interactable" parent="Door" instance=ExtResource("6_op3qk")]
-interact_name = "Press Enter to enter the office"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Interactable"]
-position = Vector2(-1, 0.5)
-shape = SubResource("RectangleShape2D_0tnpc")
-
 [node name="HidyPlace" type="StaticBody2D" parent="."]
 position = Vector2(457, -1010)
 script = ExtResource("9_kvpfn")
@@ -287,4 +276,39 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 
+[node name="Door" type="Node" parent="."]
+
+[node name="StaticBody" type="StaticBody2D" parent="Door"]
+position = Vector2(2004, -1020)
+script = ExtResource("7_vtaks")
+
+[node name="Interactable" parent="Door/StaticBody" instance=ExtResource("6_op3qk")]
+interact_name = "Press Enter to enter the office."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/StaticBody/Interactable"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_0tnpc")
+
+[node name="Interactable2" parent="Door/StaticBody" instance=ExtResource("6_op3qk")]
+interact_name = "Find the key to unlock this door."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/StaticBody/Interactable2"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_0tnpc")
+
+[node name="Label" type="Label" parent="Door"]
+anchors_preset = -1
+anchor_left = 1.464
+anchor_top = -2.012
+anchor_right = 1.943
+anchor_bottom = -1.902
+offset_left = -1686.53
+offset_top = 1303.78
+offset_right = -2198.34
+offset_bottom = 1255.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "olaaaaa"
+
 [connection signal="timeout" from="augusto/speed_timer" to="augusto/speed_timer" method="_on_timeout"]
+[connection signal="body_entered" from="Door/StaticBody/Interactable" to="Door/StaticBody" method="_on_interactable_body_entered"]
