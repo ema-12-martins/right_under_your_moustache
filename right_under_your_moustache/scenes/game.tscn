@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bkb5dnxash1w2"]
+[gd_scene load_steps=29 format=4 uid="uid://bkb5dnxash1w2"]
 
 [ext_resource type="Texture2D" uid="uid://bax4qsx84ekwh" path="res://images/sprite_blooks.png" id="1_c76tl"]
 [ext_resource type="Texture2D" uid="uid://uiawry51ph4o" path="res://images/background.png" id="1_foirs"]
@@ -17,10 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://p7im8cqmkuvf" path="res://scenes/camera.tscn" id="12_dinhu"]
 [ext_resource type="PackedScene" uid="uid://3ru1nw6tk0sl" path="res://scenes/bin.tscn" id="16_264po"]
 [ext_resource type="Script" uid="uid://dsix74jxkc8ey" path="res://scripts/exit.gd" id="16_ca42v"]
-[ext_resource type="Texture2D" uid="uid://b7aykbx4rqebv" path="res://images/key.png" id="17_rysoc"]
-[ext_resource type="Script" uid="uid://d12wjbgu0hqk6" path="res://scripts/hud.gd" id="17_ssvqc"]
-[ext_resource type="Texture2D" uid="uid://c0ur12ofyqyfl" path="res://images/clock.png" id="19_1kice"]
-[ext_resource type="Script" uid="uid://dgie5ob15vnpw" path="res://scripts/run_time.gd" id="20_5newe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trtic"]
 texture = ExtResource("1_foirs")
@@ -245,65 +241,6 @@ script = ExtResource("16_ca42v")
 position = Vector2(2.5, -5.5)
 shape = SubResource("RectangleShape2D_rysoc")
 
-[node name="Hud" type="CanvasLayer" parent="."]
-script = ExtResource("17_ssvqc")
-
-[node name="Control" type="Control" parent="Hud"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.980977, 0.974935)
-size_flags_horizontal = 0
-
-[node name="MarginContainer-Keys" type="MarginContainer" parent="Hud/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Hud/Control/MarginContainer-Keys"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Hud/Control/MarginContainer-Keys/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("17_rysoc")
-expand_mode = 3
-
-[node name="keys" type="Label" parent="Hud/Control/MarginContainer-Keys/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-
-[node name="MarginContainer-Time" type="MarginContainer" parent="Hud/Control"]
-offset_left = 426.106
-offset_top = -2.05142
-offset_right = 503.106
-offset_bottom = 69.9486
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Hud/Control/MarginContainer-Time"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Hud/Control/MarginContainer-Time/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("19_1kice")
-expand_mode = 3
-
-[node name="current_time" type="Label" parent="Hud/Control/MarginContainer-Time/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "00:00"
-
-[node name="run_timer" type="Timer" parent="Hud/Control/MarginContainer-Time/HBoxContainer"]
-process_callback = 0
-script = ExtResource("20_5newe")
-
 [node name="Door" type="Node" parent="."]
 
 [node name="StaticBody" type="StaticBody2D" parent="Door"]
@@ -318,5 +255,4 @@ position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_0tnpc")
 
 [connection signal="timeout" from="augusto/speed_timer" to="augusto/speed_timer" method="_on_timeout"]
-[connection signal="timeout" from="Hud/Control/MarginContainer-Time/HBoxContainer/run_timer" to="Hud/Control/MarginContainer-Time/HBoxContainer/run_timer" method="_on_timeout"]
 [connection signal="body_entered" from="Door/StaticBody/Interactable" to="Door/StaticBody" method="_on_interactable_body_entered"]
