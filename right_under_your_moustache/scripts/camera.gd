@@ -10,13 +10,7 @@ func _ready() -> void:
 	
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "augusto":
-		call_deferred("reload_scene")
-
-func reload_scene():
-	Global.keys = 0
-	Global.last_world_position = Vector2(0, 0)
-	get_tree().reload_current_scene()
-	
+		Global.reload_scene(body.get_path())
 
 func _on_flip_camera_timeout() -> void:
 	area_2d.scale.x *= -1

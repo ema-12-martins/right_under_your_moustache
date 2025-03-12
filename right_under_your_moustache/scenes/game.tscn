@@ -124,6 +124,7 @@ position = Vector2(2302, -188)
 [node name="Camera2D" type="Camera2D" parent="augusto"]
 position = Vector2(0, 96)
 zoom = Vector2(0.3, 0.3)
+limit_bottom = 720
 position_smoothing_enabled = true
 
 [node name="speed_timer" type="Timer" parent="augusto"]
