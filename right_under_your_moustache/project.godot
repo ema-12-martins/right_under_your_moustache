@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="right_under_your_moustache"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="uid://c564gm5e3d1k2"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

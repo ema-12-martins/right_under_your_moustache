@@ -6,6 +6,6 @@ extends StaticBody2D
 func _ready() -> void:
 	interactable.interact = _on_interact
 
-func _on_interact(_key_pressed: String):
-	Global.got_exam = 1
-	$"../Label".visible = true
+func _on_interact(key_pressed: String):
+	if key_pressed == "Left Mouse Button":
+		get_tree().change_scene_to_file("res://scenes/ducks_folder.tscn")

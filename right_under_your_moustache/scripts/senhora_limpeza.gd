@@ -16,12 +16,7 @@ func _ready() -> void:
 
 func _on_player_detected(body: Node2D) -> void:
 	if body.name == "augusto" and body.modulate != Color(0.5, 0.5, 0.5, 1.0):
-		call_deferred("reload_scene")
-
-func reload_scene():
-	Global.keys = 0
-	Global.last_world_position = Vector2(0, 0)
-	get_tree().reload_current_scene()
+		Global.reload_scene(body.get_path())
 
 func _process(_delta: float) -> void:
 	patrol()

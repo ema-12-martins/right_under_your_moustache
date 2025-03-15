@@ -1,12 +1,12 @@
-[gd_scene load_steps=32 format=4 uid="uid://bkb5dnxash1w2"]
+[gd_scene load_steps=29 format=4 uid="uid://bkb5dnxash1w2"]
 
-[ext_resource type="Texture2D" uid="uid://bax4qsx84ekwh" path="res://images/sprite_blooks.png" id="1_c76tl"]
-[ext_resource type="Texture2D" uid="uid://uiawry51ph4o" path="res://images/background.png" id="1_foirs"]
+[ext_resource type="Texture2D" uid="uid://bbp7wrncv75rd" path="res://images/sprite_blooks.png" id="1_c76tl"]
+[ext_resource type="Texture2D" uid="uid://bsgwmy6rm0sg4" path="res://images/background.png" id="1_foirs"]
 [ext_resource type="Script" uid="uid://bufaf1mskpeca" path="res://scripts/game.gd" id="1_ir15t"]
-[ext_resource type="Texture2D" uid="uid://cb3xix8ip5c7o" path="res://images/outlines.png" id="2_0e0cp"]
+[ext_resource type="Texture2D" uid="uid://b45sp706gqgkn" path="res://images/outlines.png" id="2_0e0cp"]
 [ext_resource type="PackedScene" uid="uid://biddnldnktd0s" path="res://scenes/augusto.tscn" id="2_x5d4i"]
 [ext_resource type="Script" uid="uid://c8ivj5p08w25r" path="res://scripts/test.gd" id="4_kxxrh"]
-[ext_resource type="Texture2D" uid="uid://d2g7fvn7mndpk" path="res://images/shadow_gradient.png" id="4_o3pkp"]
+[ext_resource type="Texture2D" uid="uid://cgquukn6k3w2r" path="res://images/shadow_gradient.png" id="4_o3pkp"]
 [ext_resource type="PackedScene" uid="uid://bu7byw51agiqh" path="res://scenes/senhora_limpeza.tscn" id="5_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://chjnxo10743q0" path="res://interactions/Interactable.tscn" id="6_op3qk"]
 [ext_resource type="Script" uid="uid://bhatpi5j64g1b" path="res://scripts/speed_timer.gd" id="7_kvpfn"]
@@ -17,9 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://p7im8cqmkuvf" path="res://scenes/camera.tscn" id="12_dinhu"]
 [ext_resource type="PackedScene" uid="uid://3ru1nw6tk0sl" path="res://scenes/bin.tscn" id="16_264po"]
 [ext_resource type="Script" uid="uid://dsix74jxkc8ey" path="res://scripts/exit.gd" id="16_ca42v"]
-[ext_resource type="Texture2D" uid="uid://b7aykbx4rqebv" path="res://images/key.png" id="17_rysoc"]
-[ext_resource type="Script" uid="uid://d12wjbgu0hqk6" path="res://scripts/hud.gd" id="17_ssvqc"]
-[ext_resource type="Texture2D" uid="uid://c0ur12ofyqyfl" path="res://images/clock.png" id="19_1kice"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trtic"]
 texture = ExtResource("1_foirs")
@@ -127,6 +124,7 @@ position = Vector2(2302, -188)
 [node name="Camera2D" type="Camera2D" parent="augusto"]
 position = Vector2(0, 96)
 zoom = Vector2(0.3, 0.3)
+limit_bottom = 720
 position_smoothing_enabled = true
 
 [node name="speed_timer" type="Timer" parent="augusto"]
@@ -243,62 +241,6 @@ script = ExtResource("16_ca42v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
 position = Vector2(2.5, -5.5)
 shape = SubResource("RectangleShape2D_rysoc")
-
-[node name="Hud" type="CanvasLayer" parent="."]
-script = ExtResource("17_ssvqc")
-
-[node name="Control" type="Control" parent="Hud"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.980977, 0.974935)
-size_flags_horizontal = 0
-
-[node name="MarginContainer-Keys" type="MarginContainer" parent="Hud/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Hud/Control/MarginContainer-Keys"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Hud/Control/MarginContainer-Keys/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("17_rysoc")
-expand_mode = 3
-
-[node name="keys" type="Label" parent="Hud/Control/MarginContainer-Keys/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-
-[node name="MarginContainer-Time" type="MarginContainer" parent="Hud/Control"]
-layout_mode = 0
-offset_left = 426.106
-offset_top = -2.05142
-offset_right = 503.106
-offset_bottom = 69.9486
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Hud/Control/MarginContainer-Time"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Hud/Control/MarginContainer-Time/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("19_1kice")
-expand_mode = 3
-
-[node name="current_time" type="Label" parent="Hud/Control/MarginContainer-Time/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "Timeeeeee"
 
 [node name="Door" type="Node" parent="."]
 

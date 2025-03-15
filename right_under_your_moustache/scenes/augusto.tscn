@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://biddnldnktd0s"]
 
 [ext_resource type="Script" uid="uid://6fm1ruxlx2e7" path="res://scripts/augusto.gd" id="1_vlu5a"]
-[ext_resource type="Texture2D" uid="uid://32e72f0bthq" path="res://images/student.png" id="2_563dn"]
+[ext_resource type="Texture2D" uid="uid://b8nkuiefg35ma" path="res://images/student.png" id="2_563dn"]
 [ext_resource type="PackedScene" uid="uid://cb5ac33fsghhx" path="res://interactions/interacting_component.tscn" id="3_6d7db"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cn110"]
