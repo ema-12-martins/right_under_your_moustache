@@ -15,18 +15,9 @@ func _ready() -> void:
 func _on_interact(key_pressed: String):
 
 	if levels.level == 0 and (key_pressed == "W" or key_pressed == "Up"):
-		#First, change visibilities to be possible to land the character
-		collision_shape_level_0.disabled = true
-		collision_shape_level_1.disabled = false
-		
 		augusto.position.y -= 700
 		levels.level += 1
-		
+	
 	elif levels.level == 1 and (key_pressed == "S" or key_pressed == "Down"):
-		collision_shape_level_0.disabled = false
-		collision_shape_level_1.disabled = true
-		
 		augusto.position.y += 800
 		levels.level -= 1
-		
-		

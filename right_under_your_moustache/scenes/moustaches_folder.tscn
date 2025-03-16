@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cb5ac33fsghhx" path="res://interactions/interacting_component.tscn" id="6_vjmu6"]
 [ext_resource type="Texture2D" uid="uid://dhem3c4fyvb0x" path="res://images/warning.png" id="7_abpj7"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4ocp"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kgfbl"]
 texture = ExtResource("1_4uoq6")
 texture_region_size = Vector2i(45, 45)
 0:0/0 = 0
@@ -25,7 +25,7 @@ texture_region_size = Vector2i(45, 45)
 7:1/0 = 0
 8:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqcch"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kd5hn"]
 texture = ExtResource("2_kgfbl")
 texture_region_size = Vector2i(45, 45)
 0:0/0 = 0
@@ -42,7 +42,7 @@ texture_region_size = Vector2i(45, 45)
 11:0/0 = 0
 12:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlu6p"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aytu6"]
 texture = ExtResource("3_kd5hn")
 texture_region_size = Vector2i(45, 45)
 0:0/0 = 0
@@ -51,7 +51,7 @@ texture_region_size = Vector2i(45, 45)
 1:1/0 = 0
 2:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iie84"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8o3dh"]
 texture = ExtResource("4_aytu6")
 texture_region_size = Vector2i(45, 45)
 0:0/0 = 0
@@ -61,10 +61,10 @@ texture_region_size = Vector2i(45, 45)
 
 [sub_resource type="TileSet" id="TileSet_aht3j"]
 tile_size = Vector2i(45, 45)
-sources/3 = SubResource("TileSetAtlasSource_mlu6p")
-sources/0 = SubResource("TileSetAtlasSource_n4ocp")
-sources/1 = SubResource("TileSetAtlasSource_yqcch")
-sources/4 = SubResource("TileSetAtlasSource_iie84")
+sources/3 = SubResource("TileSetAtlasSource_aytu6")
+sources/0 = SubResource("TileSetAtlasSource_kgfbl")
+sources/1 = SubResource("TileSetAtlasSource_kd5hn")
+sources/4 = SubResource("TileSetAtlasSource_8o3dh")
 
 [sub_resource type="LabelSettings" id="LabelSettings_q547l"]
 outline_size = 7

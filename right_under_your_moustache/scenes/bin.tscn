@@ -30,6 +30,7 @@ offset_bottom = -165.0
 scale = Vector2(2.14258, 2.14258)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Press Enter to check the trash bin."
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

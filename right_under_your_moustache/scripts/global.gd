@@ -3,6 +3,7 @@ extends Node
 var last_world_position = Vector2(0, 0)
 var last_office_position = Vector2(0, 0)
 var elipsed_time_in_seconds = 0
+var bin_tries = 0
 var global_scene_instance: Node = null:
 	set(resourse):
 		global_scene_instance = resourse
