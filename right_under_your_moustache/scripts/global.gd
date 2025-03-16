@@ -30,10 +30,12 @@ func reload_scene(body_path: NodePath):
 	#Espera 2 segundos para dar reload
 	await get_tree().create_timer(1.5).timeout 
 	
-	# Reset posicao, chaves e exames
+	# Reset posições, chaves, exames e tentativas caixotes
 	keys = 0  
 	last_world_position = Vector2(0, 0)
+	last_office_position = Vector2(0, 0)
+	bin_tries = 0
 	got_exam = 0
 	
 	#Recarrega cena
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://scenes/game.tscn")

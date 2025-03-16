@@ -10,21 +10,23 @@ var current_point_index = 0
 @onready var detection_area_display: Polygon2D = $Polygon2D
 
 func _ready() -> void:
+	animated_sprite.play("run")
 	if patrol_points.size() == 0:
 		print("No patrol points assigned!")
 	detection_area.body_entered.connect(_on_player_detected)
 
 func _on_player_detected(body: Node2D) -> void:
-	if body.name == "augusto" and body.modulate != Color(0.5, 0.5, 0.5, 1.0):
-		Global.reload_scene(body.get_path())
+	if visible:
+		if body.name == "augusto" and body.modulate != Color(0.5, 0.5, 0.5, 1.0):
+			Global.reload_scene(body.get_path())
 
 func _process(_delta: float) -> void:
-	patrol()
-	move_and_slide()
+	if visible:
+		patrol()
+		move_and_slide()
 
 func patrol() -> void:
 	if patrol_points.size() > 0:
-		animated_sprite.play("run")
 		var target = patrol_points[current_point_index].position
 		velocity = (target - position).normalized() * speed
 		if velocity.x < 0:
