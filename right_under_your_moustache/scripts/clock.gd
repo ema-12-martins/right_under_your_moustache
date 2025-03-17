@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 		# Create a label to display "-10s"
 		var time_label = Label.new()
 		time_label.text = "-10s"
-		time_label.add_theme_color_override("font_color", Color.RED) 
+		time_label.add_theme_color_override("font_color", Color.DARK_GREEN) 
 		time_label.add_theme_font_size_override("font_size", 36)
 		time_label.set_position(global_position + Vector2(0, -150)) 
 		get_parent().add_child(time_label) 

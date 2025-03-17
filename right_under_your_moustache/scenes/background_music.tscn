@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2mkkfc8rmn0s"]
 
-[ext_resource type="AudioStream" uid="uid://c1wfk7k20fn8d" path="res://music/background_music.mp3" id="1_0rulj"]
+[ext_resource type="AudioStream" uid="uid://yysojj4d8bbd" path="res://music/final_background.mp3" id="1_0rulj"]
 
 [node name="Background_music" type="AudioStreamPlayer2D"]
 scale = Vector2(0.337704, 0.337704)
