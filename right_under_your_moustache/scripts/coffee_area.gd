@@ -20,6 +20,18 @@ func _on_body_exited(body: Node2D) -> void:
 func _process(_delta: float) -> void:
 	if inside_area and Input.is_action_just_pressed("ui_accept"):  # 'ui_accept' == Enter
 		if augusto.velocity_speed == false:
+			
+			#Create sound interacting
+			var audio_player = AudioStreamPlayer2D.new()
+			audio_player.stream = preload("res://music/drink_short.mp3")  
+			audio_player.bus = "Master"  
+			audio_player.global_position = global_position 
+			
+			audio_player.max_distance = 10_000_000
+			
+			get_parent().add_child(audio_player)
+			audio_player.play()
+		
 			augusto.SPEED += 800
 			augusto.velocity_speed = true
 			speed_timer.start()

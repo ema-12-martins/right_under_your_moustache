@@ -75,7 +75,9 @@ sprite_frames = SubResource("SpriteFrames_e6sao")
 animation = &"run"
 frame_progress = 0.906681
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(0, 14.5)
 shape = SubResource("RectangleShape2D_qnk77")
 

@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://s0d5lbvc0ff0"]
+[gd_scene load_steps=5 format=3 uid="uid://s0d5lbvc0ff0"]
 
 [ext_resource type="Texture2D" uid="uid://c67yit1pgugt4" path="res://images/coffee.png" id="1_vqwbw"]
 [ext_resource type="Script" uid="uid://xa2w0p8xggaq" path="res://scripts/coffee_area.gd" id="2_y23ww"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vqwbw"]
 size = Vector2(779, 1518)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y23ww"]
+font_size = 140
+outline_size = 42
+outline_color = Color(0, 0, 0, 1)
 
 [node name="coffee_machine" type="Node2D"]
 
@@ -24,9 +29,8 @@ offset_left = -833.0
 offset_top = -1006.0
 offset_right = 849.0
 offset_bottom = -814.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 140
 text = "Press Enter to get coffee."
+label_settings = SubResource("LabelSettings_y23ww")
 horizontal_alignment = 1
 vertical_alignment = 1
 

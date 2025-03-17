@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bkb5dnxash1w2"]
+[gd_scene load_steps=32 format=4 uid="uid://bkb5dnxash1w2"]
 
 [ext_resource type="Texture2D" uid="uid://bbp7wrncv75rd" path="res://images/sprite_blooks.png" id="1_c76tl"]
 [ext_resource type="Texture2D" uid="uid://bsgwmy6rm0sg4" path="res://images/background.png" id="1_foirs"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://3ru1nw6tk0sl" path="res://scenes/bin.tscn" id="16_264po"]
 [ext_resource type="Script" uid="uid://dsix74jxkc8ey" path="res://scripts/exit.gd" id="16_ca42v"]
 [ext_resource type="Script" uid="uid://ck1sqro7gmqj4" path="res://scripts/dummy_door.gd" id="18_ssvqc"]
+[ext_resource type="PackedScene" uid="uid://bh6k2eietcql7" path="res://scenes/clock.tscn" id="19_264po"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trtic"]
 texture = ExtResource("1_foirs")
@@ -349,6 +350,16 @@ interact_name = "Press Enter to open the door"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/DummyDoor2/Interactable"]
 position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_0tnpc")
+
+[node name="Clocks" type="Node" parent="."]
+
+[node name="clock" parent="Clocks" instance=ExtResource("19_264po")]
+position = Vector2(-7497, -208)
+scale = Vector2(0.337704, 0.337704)
+
+[node name="clock2" parent="Clocks" instance=ExtResource("19_264po")]
+position = Vector2(-4246, -930)
+scale = Vector2(0.337704, 0.337704)
 
 [connection signal="timeout" from="augusto/speed_timer" to="augusto/speed_timer" method="_on_timeout"]
 [connection signal="body_entered" from="Door/OfficeDoor/Interactable" to="Door/OfficeDoor" method="_on_interactable_body_entered"]

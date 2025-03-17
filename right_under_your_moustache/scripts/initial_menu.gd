@@ -6,7 +6,6 @@ func _on_ready() -> void:
 
 
 func _ready():
-	#get_tree().change_scene_to_file("res://scenes/final_menu.tscn")
 	$VBoxContainer/StartButton.connect("mouse_entered", Callable(self, "_on_mouse_entered").bind($VBoxContainer/StartButton))
 	$VBoxContainer/QuitButton.connect("mouse_entered", Callable(self, "_on_mouse_entered").bind($VBoxContainer/QuitButton))
 
@@ -14,16 +13,60 @@ func _on_mouse_entered(button) -> void:
 	button.grab_focus()
 
 func _on_start_button_pressed() -> void:
+	#Create sound interacting
+	var audio_player = AudioStreamPlayer2D.new()
+	audio_player.stream = preload("res://music/button_short.mp3")  
+	audio_player.bus = "Master"  
+	audio_player.global_position = global_position 
+	
+	audio_player.max_distance = 10_000_000
+	
+	get_parent().add_child(audio_player)
+	audio_player.play()
+		
 	Global.global_scene_instance = preload("res://scenes/hud.tscn").instantiate()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
-
+	
 func _on_quit_button_pressed() -> void:
+	#Create sound interacting
+	var audio_player = AudioStreamPlayer2D.new()
+	audio_player.stream = preload("res://music/button_short.mp3")  
+	audio_player.bus = "Master"  
+	audio_player.global_position = global_position 
+	
+	audio_player.max_distance = 10_000_000
+	
+	get_parent().add_child(audio_player)
+	audio_player.play()
+	
 	get_tree().quit()
 
 func _on_start_button_focus_exited() -> void:
+	#Create sound interacting
+	var audio_player = AudioStreamPlayer2D.new()
+	audio_player.stream = preload("res://music/button_short.mp3")  
+	audio_player.bus = "Master"  
+	audio_player.global_position = global_position 
+	
+	audio_player.max_distance = 10_000_000
+	
+	get_parent().add_child(audio_player)
+	audio_player.play()
+	
 	$VBoxContainer/StartButton.add_theme_color_override("font_hover_color", Color("#FFFFFF"))
 
 func _on_start_button_focus_entered() -> void:
+	#Create sound interacting
+	var audio_player = AudioStreamPlayer2D.new()
+	audio_player.stream = preload("res://music/button_short.mp3")  
+	audio_player.bus = "Master"  
+	audio_player.global_position = global_position 
+	
+	audio_player.max_distance = 10_000_000
+	
+	get_parent().add_child(audio_player)
+	audio_player.play()
+	
 	$VBoxContainer/StartButton.add_theme_color_override("font_hover_color", Color("#ffff4c"))
 
 func _on_quit_button_focus_entered() -> void:
