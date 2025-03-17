@@ -18,6 +18,17 @@ func _ready() -> void:
 func _on_player_detected(body: Node2D) -> void:
 	if visible:
 		if body.name == "augusto" and body.modulate != Color(0.5, 0.5, 0.5, 1.0):
+			#Create sound interacting
+			var audio_player = AudioStreamPlayer2D.new()
+			audio_player.stream = preload("res://music/metal_gear_short.mp3")  
+			audio_player.bus = "Master"  
+			audio_player.global_position = global_position 
+			
+			audio_player.max_distance = 10_000_000
+			
+			get_parent().add_child(audio_player)
+			audio_player.play()
+				
 			Global.reload_scene(body.get_path())
 
 func _process(_delta: float) -> void:

@@ -12,11 +12,6 @@ var global_scene_instance: Node = null:
 		global_scene_instance = resourse
 		add_child(global_scene_instance)
 		
-var global_music_instance: Node = null:
-	set(resourse):
-		global_scene_instance = resourse
-		add_child(global_scene_instance)
-		
 var best_time = 1000000000000000000
 
 signal keys_and_exam_updated  # Sinal para notificar mudanças na variável keys

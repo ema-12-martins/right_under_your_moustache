@@ -10,6 +10,17 @@ func _ready() -> void:
 	
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "augusto":
+		#Create sound interacting
+		var audio_player = AudioStreamPlayer2D.new()
+		audio_player.stream = preload("res://music/alert_short.mp3")  
+		audio_player.bus = "Master"  
+		audio_player.global_position = global_position 
+		
+		audio_player.max_distance = 10_000_000
+		
+		get_parent().add_child(audio_player)
+		audio_player.play()
+			
 		Global.reload_scene(body.get_path())
 
 func _on_flip_camera_timeout() -> void:
