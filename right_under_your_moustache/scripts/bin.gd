@@ -15,7 +15,7 @@ func _on_body_exited(body: Node2D) -> void:
 		inside_area = false
 
 func _process(_delta: float) -> void:
-	if inside_area and Input.is_action_just_pressed("ui_accept") and Global.keys == 0:  # 'ui_accept' == Enter
+	if inside_area and Input.is_action_just_pressed("ui_accept") and Global.keys == 0 and label.text == "Press Enter to check the trash bin.":  # 'ui_accept' == Enter
 		if RandomNumberGenerator.new().randf_range(1, 3) == 1 or Global.bin_tries == 2:
 			$"../../../Door/OfficeDoor/Interactable".interact_name = "Press Enter to enter the office"
 			Global.keys += 1
