@@ -33,6 +33,7 @@ func _on_interact(key_pressed: String):
 		augusto.visible=true
 		augusto.process_mode = Node.PROCESS_MODE_INHERIT
 		
+		
 		augusto.position.y -= 700
 		levels.level += 1
 	

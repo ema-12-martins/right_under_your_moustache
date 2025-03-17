@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://c564gm5e3d1k2"]
+[gd_scene load_steps=19 format=4 uid="uid://c564gm5e3d1k2"]
 
 [ext_resource type="Script" uid="uid://cdwpc1forftbi" path="res://scripts/initial_menu.gd" id="1_148c3"]
 [ext_resource type="Texture2D" uid="uid://bsgwmy6rm0sg4" path="res://images/background.png" id="2_oc6bb"]
@@ -72,18 +72,20 @@ sources/4 = SubResource("TileSetAtlasSource_sgfvm")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rek5e"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_148c3"]
-bg_color = Color(0, 0, 0, 0.341176)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xllue"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ku6a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oc6bb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7nlc8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_148c3"]
+bg_color = Color(0, 0, 0, 0.341176)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="initial_menu" type="Control"]
 layout_mode = 3
@@ -142,7 +144,7 @@ theme_override_constants/align_to_largest_stylebox = 10
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_148c3")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_rek5e")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_148c3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xllue")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_8ku6a")
 text = "Start"
 
