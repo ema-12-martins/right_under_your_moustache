@@ -16,7 +16,6 @@ func _ready():
 	$VBoxContainer/exit.connect("mouse_entered", Callable(self, "_on_mouse_entered").bind($VBoxContainer/exit))
 
 func _on_restart_pressed() -> void:
-	Global.global_scene_instance = preload("res://scenes/final_menu.tscn").instantiate()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_exit_pressed() -> void:

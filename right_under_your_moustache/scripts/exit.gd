@@ -10,4 +10,7 @@ func _on_player_detected(body: Node2D) -> void:
 		call_deferred("end_game")
 
 func end_game():
-	get_tree().quit()
+	if Global.best_time < Global.elipsed_time_in_seconds:
+		Global.best_time = Global.elipsed_time_in_seconds
+		
+	get_tree().change_scene_to_file("res://scenes/final_menu.tscn")

@@ -1,14 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://4bcp1vy2nveg"]
+[gd_scene load_steps=9 format=3 uid="uid://4bcp1vy2nveg"]
 
 [ext_resource type="Script" uid="uid://dllwo57hy65j7" path="res://scripts/final_menu.gd" id="1_3iht6"]
+[ext_resource type="Texture2D" uid="uid://37devn5cku08" path="res://images/menu_background.png" id="2_iv38b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5hqir"]
+texture = ExtResource("2_iv38b")
+modulate_color = Color(0.347817, 0.347817, 0.347817, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1qq87"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3iht6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iv38b"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iv38b"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5hqir"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jdcda"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -22,12 +29,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -586.0
-offset_top = -325.0
-offset_right = 550.0
+offset_left = -1160.0
+offset_top = -393.0
+offset_right = 548.0
 offset_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5hqir")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -48,7 +56,7 @@ theme_override_constants/align_to_largest_stylebox = 10
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1qq87")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_3iht6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_iv38b")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iv38b")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5hqir")
 text = "Restart"
 
@@ -64,7 +72,7 @@ theme_override_constants/align_to_largest_stylebox = 10
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1qq87")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_3iht6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_iv38b")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jdcda")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5hqir")
 text = "Exit
 "
