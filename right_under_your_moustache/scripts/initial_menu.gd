@@ -6,6 +6,7 @@ func _on_ready() -> void:
 
 
 func _ready():
+	
 	$VBoxContainer/StartButton.connect("mouse_entered", Callable(self, "_on_mouse_entered").bind($VBoxContainer/StartButton))
 	$VBoxContainer/QuitButton.connect("mouse_entered", Callable(self, "_on_mouse_entered").bind($VBoxContainer/QuitButton))
 
@@ -14,8 +15,9 @@ func _on_mouse_entered(button) -> void:
 
 func _on_start_button_pressed() -> void:
 	Global.global_scene_instance = preload("res://scenes/hud.tscn").instantiate()
+	Global.global_music_instance = preload("res://scenes/background_music.tscn").instantiate()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
-
+	
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 
