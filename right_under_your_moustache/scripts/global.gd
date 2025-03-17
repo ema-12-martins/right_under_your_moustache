@@ -23,12 +23,17 @@ var keys: int = 0:
 func reload_scene(body_path: NodePath):
 	
 	var augusto = get_node_or_null(body_path)
+	
+	# To not move
+	augusto.SPEED = 0
+	
+	# To fall
 	var collision_shape = augusto.get_node_or_null("CollisionShape2D")
 	collision_shape.queue_free()
 	
 	
-	#Espera 2 segundos para dar reload
-	await get_tree().create_timer(1.5).timeout 
+	#Time do die
+	await get_tree().create_timer(1).timeout 
 	
 	# Reset posições, chaves, exames e tentativas caixotes
 	keys = 0  
