@@ -72,6 +72,30 @@ text = "Exit
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.985, 0.985)
 
+[node name="Labels" type="Node" parent="."]
+
+[node name="race_time" type="Label" parent="Labels"]
+offset_left = -230.0
+offset_top = -283.0
+offset_right = 200.0
+offset_bottom = -114.0
+theme_override_font_sizes/font_size = 60
+text = "Race Time:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="best_time" type="Label" parent="Labels"]
+offset_left = -206.0
+offset_top = -204.0
+offset_right = 224.0
+offset_bottom = -63.0
+theme_override_font_sizes/font_size = 43
+text = "Best Time:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="focus_entered" from="VBoxContainer/restart" to="." method="_on_restart_focus_entered"]

@@ -1,6 +1,17 @@
 extends Control
 
+@onready var race_time: Label = $Labels/race_time
+@onready var best_time: Label = $Labels/best_time
+
 func _ready():
+	var minutes = Global.elipsed_time_in_seconds / 60.0
+	var seconds = Global.elipsed_time_in_seconds % 60
+	race_time.text = "Race time: %02d:%02d" % [minutes, seconds]
+	
+	minutes = Global.best_time / 60.0
+	seconds = Global.best_time % 60
+	best_time.text = "Best time: %02d:%02d" % [minutes, seconds]
+	
 	$VBoxContainer/restart.connect("mouse_entered", Callable(self, "_on_mouse_entered").bind($VBoxContainer/restart))
 	$VBoxContainer/exit.connect("mouse_entered", Callable(self, "_on_mouse_entered").bind($VBoxContainer/exit))
 
