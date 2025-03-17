@@ -6,6 +6,7 @@ func _on_ready() -> void:
 
 
 func _ready():
+	get_tree().change_scene_to_file("res://scenes/final_menu.tscn")
 	$VBoxContainer/StartButton.connect("mouse_entered", Callable(self, "_on_mouse_entered").bind($VBoxContainer/StartButton))
 	$VBoxContainer/QuitButton.connect("mouse_entered", Callable(self, "_on_mouse_entered").bind($VBoxContainer/QuitButton))
 

@@ -8,6 +8,7 @@ var global_scene_instance: Node = null:
 	set(resourse):
 		global_scene_instance = resourse
 		add_child(global_scene_instance)
+var best_time = 0
 
 signal keys_and_exam_updated  # Sinal para notificar mudanças na variável keys
 var got_exam: int = 0:
