@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 		queue_free()
 		
 		var audio_player = AudioStreamPlayer2D.new()
-		audio_player.stream = preload("res://music/clock.mp3")  # Substitua pelo caminho correto
+		audio_player.stream = preload("res://music/short_clock.mp3")  # Substitua pelo caminho correto
 		audio_player.bus = "Master"  # Ajuste para a bus de áudio correta se necessário
 		audio_player.global_position = global_position  # Posiciona o som corretamente
 		
