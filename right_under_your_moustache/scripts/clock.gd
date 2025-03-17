@@ -26,6 +26,18 @@ func _process(_delta: float) -> void:
 		#Remove clock
 		queue_free()
 		
+		var audio_player = AudioStreamPlayer2D.new()
+		audio_player.stream = preload("res://music/clock.mp3")  # Substitua pelo caminho correto
+		audio_player.bus = "Master"  # Ajuste para a bus de áudio correta se necessário
+		audio_player.global_position = global_position  # Posiciona o som corretamente
+		
+		# Ajustar distância máxima do som
+		audio_player.max_distance = 10_000_000
+		
+		# Adicionar à cena e tocar o som
+		get_parent().add_child(audio_player)
+		audio_player.play()
+		
 		# Wait 3 seconds before removing the label
 		await get_tree().create_timer(1).timeout  
 		time_label.queue_free() 
