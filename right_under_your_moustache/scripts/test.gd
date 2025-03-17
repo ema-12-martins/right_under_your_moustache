@@ -49,7 +49,12 @@ func _on_interact(key_pressed: String):
 		get_parent().add_child(audio_player)
 		audio_player.play()
 		
+		#Time for the sound to work
+		augusto.visible=false
+		augusto.process_mode = Node.PROCESS_MODE_DISABLED
 		await get_tree().create_timer(1).timeout 
+		augusto.visible=true
+		augusto.process_mode = Node.PROCESS_MODE_INHERIT
 		
 		augusto.position.y += 800
 		levels.level -= 1

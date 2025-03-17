@@ -4,20 +4,21 @@ extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#Create sound interacting
-	var audio_player = AudioStreamPlayer2D.new()
-	audio_player.stream = preload("res://music/button_short.mp3")  
-	audio_player.bus = "Master"  
-	audio_player.global_position = global_position 
-	
-	audio_player.max_distance = 10_000_000
-	
-	get_parent().add_child(audio_player)
-	audio_player.play()
-	
 	interactable.interact = _on_interact
 
 func _on_interact(key_pressed: String):
 	if key_pressed == "Enter":
+		
+		#Create sound interacting
+		var audio_player = AudioStreamPlayer2D.new()
+		audio_player.stream = preload("res://music/button_short.mp3")  
+		audio_player.bus = "Master"  
+		audio_player.global_position = global_position 
+		
+		audio_player.max_distance = 10_000_000
+		
+		get_parent().add_child(audio_player)
+		audio_player.play()
+		
 		Global.last_office_position = $"../augusto".position
 		get_tree().change_scene_to_file("res://scenes/pc.tscn")
