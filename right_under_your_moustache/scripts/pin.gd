@@ -11,6 +11,18 @@ func _ready() -> void:
 func _on_text_changed(_character, index) -> void:
 	$"../Label2".visible = false
 	if fields[index].text != "" and index < fields.size() - 1:
+		
+		#Create sound interacting
+		var audio_player = AudioStreamPlayer2D.new()
+		audio_player.stream = preload("res://music/button_short.mp3")  
+		audio_player.bus = "Master"  
+		audio_player.global_position = global_position 
+		
+		audio_player.max_distance = 10_000_000
+		
+		get_parent().add_child(audio_player)
+		audio_player.play()
+	
 		fields[index + 1].grab_focus()
 
 func _on_gui_input(event, index) -> void:
