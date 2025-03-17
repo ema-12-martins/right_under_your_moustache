@@ -44,3 +44,6 @@ func reload_scene(body_path: NodePath):
 	
 	#Recarrega cena
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	
+	#Reset the time
+	Global.elipsed_time_in_seconds = -1
