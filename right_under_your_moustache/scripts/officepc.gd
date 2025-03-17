@@ -20,5 +20,7 @@ func _on_interact(key_pressed: String):
 		get_parent().add_child(audio_player)
 		audio_player.play()
 		
+		await get_tree().create_timer(1).timeout 
+		
 		Global.last_office_position = $"../augusto".position
 		get_tree().change_scene_to_file("res://scenes/pc.tscn")

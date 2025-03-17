@@ -13,4 +13,6 @@ func _input(event: InputEvent) -> void:
 		get_parent().add_child(audio_player)
 		audio_player.play()
 		
+		await get_tree().create_timer(1).timeout 
+		
 		get_tree().change_scene_to_file("res://scenes/pc.tscn")
