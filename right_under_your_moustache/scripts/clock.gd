@@ -26,15 +26,14 @@ func _process(_delta: float) -> void:
 		#Remove clock
 		queue_free()
 		
+		#Create sound interacting
 		var audio_player = AudioStreamPlayer2D.new()
-		audio_player.stream = preload("res://music/short_clock.mp3")  # Substitua pelo caminho correto
-		audio_player.bus = "Master"  # Ajuste para a bus de áudio correta se necessário
-		audio_player.global_position = global_position  # Posiciona o som corretamente
+		audio_player.stream = preload("res://music/short_clock.mp3")  
+		audio_player.bus = "Master"  
+		audio_player.global_position = global_position 
 		
-		# Ajustar distância máxima do som
 		audio_player.max_distance = 10_000_000
 		
-		# Adicionar à cena e tocar o som
 		get_parent().add_child(audio_player)
 		audio_player.play()
 		
