@@ -23,6 +23,7 @@ texture = ExtResource("1_vlc7k")
 shape = SubResource("CircleShape2D_y58p0")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 z_index = 1000
 anchors_preset = 8
 anchor_left = 0.5
