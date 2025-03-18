@@ -5,6 +5,7 @@ var last_office_position = Vector2(0, 0)
 
 var elipsed_time_in_seconds = 0
 var time_mutex = Mutex.new()
+var race_time = 0
 
 var bin_tries = 0
 var global_scene_instance: Node = null:

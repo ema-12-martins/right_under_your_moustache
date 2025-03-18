@@ -4,8 +4,8 @@ extends Control
 @onready var best_time: Label = $Labels/best_time
 
 func _ready():
-	var minutes = Global.elipsed_time_in_seconds / 60.0
-	var seconds = Global.elipsed_time_in_seconds % 60
+	var minutes = Global.race_time / 60.0
+	var seconds = Global.race_time % 60
 	race_time.text = "Race time: %02d:%02d" % [minutes, seconds]
 	
 	minutes = Global.best_time / 60.0

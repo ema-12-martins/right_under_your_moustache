@@ -13,6 +13,8 @@ func end_game():
 	if Global.best_time > Global.elipsed_time_in_seconds:
 		Global.best_time = Global.elipsed_time_in_seconds
 		
+	Global.race_time = Global.elipsed_time_in_seconds
+	
 	# Reset posições, chaves, exames e tentativas caixotes
 	Global.keys = 0  
 	Global.last_world_position = Vector2(0, 0)
