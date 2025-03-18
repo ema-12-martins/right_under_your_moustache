@@ -23,6 +23,8 @@ func _on_interact(key_pressed: String):
 		
 		audio_player.max_distance = 10_000_000
 		
+		audio_player.volume_db = 10.0 
+		
 		get_parent().add_child(audio_player)
 		audio_player.play()
 		
@@ -45,6 +47,8 @@ func _on_interact(key_pressed: String):
 		audio_player.global_position = global_position 
 		
 		audio_player.max_distance = 10_000_000
+		
+		audio_player.volume_db = 10
 		
 		get_parent().add_child(audio_player)
 		audio_player.play()

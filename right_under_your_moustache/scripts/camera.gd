@@ -18,6 +18,8 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		audio_player.max_distance = 10_000_000
 		
+		audio_player.volume_db = -15
+		
 		get_parent().add_child(audio_player)
 		audio_player.play()
 			
