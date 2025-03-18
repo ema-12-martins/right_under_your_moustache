@@ -8,6 +8,11 @@ func _ready() -> void:
 		
 func _on_interact(key_pressed: String):
 	if Global.keys == 1:
+			
 		if key_pressed == "Enter":
+			if Global.got_exam == 1:
+				var background = BackgroundMusic.get_node("/root/BackgroundMusic")
+				background.pitch_scale = 1.5
+			
 			Global.last_world_position = $"../../augusto".position
 			get_tree().change_scene_to_file("res://scenes/office.tscn")

@@ -17,6 +17,9 @@ func _input(event: InputEvent) -> void:
 		get_parent().add_child(audio_player)
 		audio_player.play()
 		
+		if Global.got_exam == 1:
+			var background = BackgroundMusic.get_node("/root/BackgroundMusic")
+			background.pitch_scale = 1.5
 		
 		$CharacterBody2D/InteractingComponent.interact_label.label_settings.font_size = 50
 		$CharacterBody2D/InteractingComponent.interact_label.label_settings.outline_size = 15
