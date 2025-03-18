@@ -5,7 +5,7 @@ extends StaticBody2D
 func _ready() -> void:
 	interactable.interact = _on_interact
 
-func _on_interact(key_pressed: String):
+func _on_interact(_key_pressed: String):
 	if Global.got_exam == 1:
 		call_deferred("end_game")
 

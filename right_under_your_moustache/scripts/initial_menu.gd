@@ -6,8 +6,8 @@ func _on_ready() -> void:
 
 
 func _ready():
-	$VBoxContainer/StartButton.connect("mouse_entered", Callable(self, "_on_mouse_entered").bind($VBoxContainer/StartButton))
-	$VBoxContainer/QuitButton.connect("mouse_entered", Callable(self, "_on_mouse_entered").bind($VBoxContainer/QuitButton))
+	$VBoxContainer/StartButton.connect("mouse_entered", func(): _on_mouse_entered($VBoxContainer/StartButton))
+	$VBoxContainer/QuitButton.connect("mouse_entered", func(): _on_mouse_entered($VBoxContainer/QuitButton))
 
 func _on_mouse_entered(button) -> void:
 	button.grab_focus()
@@ -21,8 +21,8 @@ func _on_start_button_pressed() -> void:
 	
 	audio_player.max_distance = 10_000_000
 	
-	get_parent().add_child(audio_player)
-	audio_player.play()
+	get_parent().call_deferred("add_child", audio_player)
+	audio_player.call_deferred("play")
 		
 	Global.global_scene_instance = preload("res://scenes/hud.tscn").instantiate()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
@@ -36,8 +36,8 @@ func _on_quit_button_pressed() -> void:
 	
 	audio_player.max_distance = 10_000_000
 	
-	get_parent().add_child(audio_player)
-	audio_player.play()
+	get_parent().call_deferred("add_child", audio_player)
+	audio_player.call_deferred("play")
 	
 	get_tree().quit()
 
@@ -50,8 +50,8 @@ func _on_start_button_focus_exited() -> void:
 	
 	audio_player.max_distance = 10_000_000
 	
-	get_parent().add_child(audio_player)
-	audio_player.play()
+	get_parent().call_deferred("add_child", audio_player)
+	audio_player.call_deferred("play")
 	
 	$VBoxContainer/StartButton.add_theme_color_override("font_hover_color", Color("#FFFFFF"))
 
@@ -64,8 +64,8 @@ func _on_start_button_focus_entered() -> void:
 	
 	audio_player.max_distance = 10_000_000
 	
-	get_parent().add_child(audio_player)
-	audio_player.play()
+	get_parent().call_deferred("add_child", audio_player)
+	audio_player.call_deferred("play")
 	
 	$VBoxContainer/StartButton.add_theme_color_override("font_hover_color", Color("#ffff4c"))
 

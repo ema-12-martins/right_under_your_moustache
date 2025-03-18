@@ -10,7 +10,8 @@ var bin_tries = 0
 var global_scene_instance: Node = null:
 	set(resourse):
 		global_scene_instance = resourse
-		add_child(global_scene_instance)
+		if global_scene_instance != null:
+			add_child(global_scene_instance)
 		
 var best_time = 1000000000000000000
 
