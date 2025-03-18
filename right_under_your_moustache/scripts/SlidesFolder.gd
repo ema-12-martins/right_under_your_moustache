@@ -7,6 +7,7 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 
 func _on_interact(key_pressed: String):
+	
 	if key_pressed == "Left Mouse Button":
 		#Create sound interacting
 		var audio_player = AudioStreamPlayer2D.new()
@@ -18,5 +19,7 @@ func _on_interact(key_pressed: String):
 		
 		get_parent().add_child(audio_player)
 		audio_player.play()
+		
+		await get_tree().create_timer(1).timeout 
 		
 		get_tree().change_scene_to_file("res://scenes/slides_folder.tscn")
