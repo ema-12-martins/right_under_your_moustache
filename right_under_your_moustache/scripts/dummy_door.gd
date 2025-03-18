@@ -6,5 +6,5 @@ extends StaticBody2D
 func _ready() -> void:
 	interactable.interact = _on_interact
 		
-func _on_interact(key_pressed: String):
+func _on_interact(_key_pressed: String):
 	interactable.interact_name = "Door jammed" 

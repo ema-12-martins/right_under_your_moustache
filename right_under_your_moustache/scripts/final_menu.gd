@@ -11,9 +11,8 @@ func _ready():
 	minutes = Global.best_time / 60.0
 	seconds = Global.best_time % 60
 	best_time.text = "Best time: %02d:%02d" % [minutes, seconds]
-	
-	$VBoxContainer/restart.connect("mouse_entered", Callable(self, "_on_mouse_entered").bind($VBoxContainer/restart))
-	$VBoxContainer/exit.connect("mouse_entered", Callable(self, "_on_mouse_entered").bind($VBoxContainer/exit))
+	$VBoxContainer/restart.connect("mouse_entered", func(): _on_mouse_entered($VBoxContainer/restart))
+	$VBoxContainer/exit.connect("mouse_entered", func(): _on_mouse_entered($VBoxContainer/exit))
 
 func _on_restart_pressed() -> void:
 	#Create sound interacting
