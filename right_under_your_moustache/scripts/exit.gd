@@ -12,6 +12,18 @@ func _on_interact(_key_pressed: String):
 func end_game():
 	if Global.best_time > Global.elipsed_time_in_seconds:
 		Global.best_time = Global.elipsed_time_in_seconds
+		
+	# Reset posições, chaves, exames e tentativas caixotes
+	Global.keys = 0  
+	Global.last_world_position = Vector2(0, 0)
+	Global.last_office_position = Vector2(0, 0)
+	Global.bin_tries = 0
+	Global.got_exam = 0
+	
+	#Reset the time
+	Global.time_mutex.lock()
+	Global.elipsed_time_in_seconds = 0
+	Global.time_mutex.unlock()
 	
 	# Take of the hud
 	Global.global_scene_instance.queue_free()

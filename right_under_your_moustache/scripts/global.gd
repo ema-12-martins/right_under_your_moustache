@@ -27,23 +27,8 @@ var keys: int = 0:
 		emit_signal("keys_and_exam_updated")  # Dispara o sinal sempre que keys mudar
 
 func replay():
-	
-	# Reset posições, chaves, exames e tentativas caixotes
-	keys = 0  
-	last_world_position = Vector2(0, 0)
-	last_office_position = Vector2(0, 0)
-	bin_tries = 0
-	got_exam = 0
-	
-	time_mutex.lock()
-	Global.elipsed_time_in_seconds = 0
-	time_mutex.unlock()
-	
-	await get_tree().create_timer(0.2).timeout
-	
 	#Recarrega cena
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
-	
 	
 func reload_scene(body_path: NodePath):
 	
