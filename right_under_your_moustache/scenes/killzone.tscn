@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://clvcmy3raig5s"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_etmu2"]
-
-[node name="killzone" type="Area2D"]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("WorldBoundaryShape2D_etmu2")

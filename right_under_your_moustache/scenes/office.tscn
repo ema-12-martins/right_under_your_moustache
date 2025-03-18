@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b35rhpawir1ya" path="res://scripts/office.gd" id="1_in4ui"]
 [ext_resource type="Texture2D" uid="uid://b45sp706gqgkn" path="res://images/outlines.png" id="2_qphb6"]
 [ext_resource type="Texture2D" uid="uid://bbp7wrncv75rd" path="res://images/sprite_blooks.png" id="3_hub07"]
-[ext_resource type="Texture2D" uid="uid://cgquukn6k3w2r" path="res://images/shadow_gradient.png" id="4_2knxt"]
+[ext_resource type="Texture2D" uid="uid://b2njc78saq62s" path="res://images/shadow_gradient.png" id="4_2knxt"]
 [ext_resource type="PackedScene" uid="uid://biddnldnktd0s" path="res://scenes/augusto.tscn" id="5_hub07"]
 [ext_resource type="Script" uid="uid://bhatpi5j64g1b" path="res://scripts/speed_timer.gd" id="6_2knxt"]
 [ext_resource type="Script" uid="uid://b6s61qwyw6380" path="res://scripts/back.gd" id="7_fmddn"]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://7tbf4rbn1kk" path="res://scripts/leave_folder.gd" id="1_kgfbl"]
 [ext_resource type="Texture2D" uid="uid://b45sp706gqgkn" path="res://images/outlines.png" id="2_kgfbl"]
 [ext_resource type="Texture2D" uid="uid://bbp7wrncv75rd" path="res://images/sprite_blooks.png" id="3_kd5hn"]
-[ext_resource type="Texture2D" uid="uid://cgquukn6k3w2r" path="res://images/shadow_gradient.png" id="4_aytu6"]
+[ext_resource type="Texture2D" uid="uid://b2njc78saq62s" path="res://images/shadow_gradient.png" id="4_aytu6"]
 [ext_resource type="Script" uid="uid://blwkc82mtnxyc" path="res://scripts/mouse.gd" id="5_8o3dh"]
 [ext_resource type="PackedScene" uid="uid://cb5ac33fsghhx" path="res://interactions/interacting_component.tscn" id="6_vjmu6"]
 [ext_resource type="Texture2D" uid="uid://dhem3c4fyvb0x" path="res://images/warning.png" id="7_abpj7"]
