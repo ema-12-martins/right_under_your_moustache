@@ -8,7 +8,7 @@ extends Area2D
 var inside_area = false
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "augusto":
+	if body.name == "augusto" and body.velocity_speed == false:
 		inside_area = true 
 		label.visible = true
 		
@@ -20,6 +20,7 @@ func _on_body_exited(body: Node2D) -> void:
 func _process(_delta: float) -> void:
 	if inside_area and Input.is_action_just_pressed("ui_accept"):  # 'ui_accept' == Enter
 		if augusto.velocity_speed == false:
+			label.visible = false
 			
 			#Create sound interacting
 			var audio_player = AudioStreamPlayer2D.new()
