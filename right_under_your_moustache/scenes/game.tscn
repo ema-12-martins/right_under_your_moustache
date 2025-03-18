@@ -309,7 +309,7 @@ scale = Vector2(0.359865, 0.359865)
 position = Vector2(1095, -761)
 
 [node name="camera2" parent="SecurityCameras" instance=ExtResource("12_dinhu")]
-position = Vector2(-4095, -1506)
+position = Vector2(-4095, -1507)
 
 [node name="Bins" type="Node" parent="."]
 
