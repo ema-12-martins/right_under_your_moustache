@@ -57,7 +57,7 @@ func reload_scene(body_path: NodePath):
 	
 	
 	#Time do die
-	await get_tree().create_timer(1).timeout 
+	await get_tree().create_timer(0.8).timeout 
 	
 	# Reset posições, chaves, exames e tentativas caixotes
 	keys = 0  
