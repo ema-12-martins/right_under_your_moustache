@@ -115,9 +115,9 @@ scale = Vector2(0.8, 0.8)
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Label" type="Label" parent="."]
-offset_left = -571.0
+offset_left = 460.6
 offset_top = -324.0
-offset_right = -462.0
+offset_right = 569.6
 offset_bottom = -301.0
 text = "Esc to go back"
 label_settings = SubResource("LabelSettings_q547l")

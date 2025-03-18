@@ -1,12 +1,12 @@
-extends Area2D
+extends StaticBody2D
 
-@onready var exit_area: Area2D = $"."
+@onready var interactable: Area2D = $Interactable
 
 func _ready() -> void:
-	exit_area.body_entered.connect(_on_player_detected)
+	interactable.interact = _on_interact
 
-func _on_player_detected(body: Node2D) -> void:
-	if body.name == "augusto" and Global.got_exam == 1:
+func _on_interact(key_pressed: String):
+	if Global.got_exam == 1:
 		call_deferred("end_game")
 
 func end_game():
