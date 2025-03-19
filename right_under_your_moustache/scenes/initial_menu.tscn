@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bsgwmy6rm0sg4" path="res://images/background.png" id="2_oc6bb"]
 [ext_resource type="Texture2D" uid="uid://b45sp706gqgkn" path="res://images/outlines.png" id="3_xllue"]
 [ext_resource type="Texture2D" uid="uid://bbp7wrncv75rd" path="res://images/sprite_blooks.png" id="4_1es10"]
-[ext_resource type="Texture2D" uid="uid://b2njc78saq62s" path="res://images/shadow_gradient.png" id="5_1fkyr"]
+[ext_resource type="Texture2D" uid="uid://ckmldm6jvgpa1" path="res://images/shadow_gradient.png" id="5_1fkyr"]
 [ext_resource type="Texture2D" uid="uid://37devn5cku08" path="res://images/menu_background.png" id="6_xllue"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1es10"]

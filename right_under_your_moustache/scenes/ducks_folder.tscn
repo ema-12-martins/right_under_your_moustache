@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bsgwmy6rm0sg4" path="res://images/background.png" id="1_xlmjx"]
 [ext_resource type="Texture2D" uid="uid://b45sp706gqgkn" path="res://images/outlines.png" id="2_nug1i"]
 [ext_resource type="Texture2D" uid="uid://bbp7wrncv75rd" path="res://images/sprite_blooks.png" id="3_iucfa"]
-[ext_resource type="Texture2D" uid="uid://b2njc78saq62s" path="res://images/shadow_gradient.png" id="4_set6j"]
+[ext_resource type="Texture2D" uid="uid://ckmldm6jvgpa1" path="res://images/shadow_gradient.png" id="4_set6j"]
 [ext_resource type="Script" uid="uid://blwkc82mtnxyc" path="res://scripts/mouse.gd" id="5_2t17l"]
 [ext_resource type="Texture2D" uid="uid://dekbiu7vj47gq" path="res://images/duck.png" id="6_set6j"]
 [ext_resource type="PackedScene" uid="uid://cb5ac33fsghhx" path="res://interactions/interacting_component.tscn" id="6_w0uly"]
@@ -85,56 +85,6 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAD2/wYAAQADAAAAAAD2/wcAAQADAAAAAAD1/wYAAQAAAAAAAAD1/wcAAQAAAAAAAADz//z/AQAAAAAAAADz//3/AQAAAAAAAADz//7/AQAAAAAAAADz////AQAAAAAAAADz/wAAAQAAAAAAAAAAAPz/AQAAAAAAAAAAAP3/AQAAAAAAAAAAAP7/AQAAAAAAAAAAAP//AQAAAAAAAAAAAAAAAQAAAAAAAAAMAPz/AQADAAAAAAAMAP3/AQADAAAAAAAMAP7/AQADAAAAAAAMAP//AQADAAAAAAAMAAAAAQADAAAAAAD0//v/AQACAAAAAAD1//v/AQACAAAAAAD2//v/AQACAAAAAAD3//v/AQACAAAAAAD4//v/AQACAAAAAAD6//v/AQACAAAAAAD7//v/AQACAAAAAAD8//v/AQACAAAAAAD9//v/AQACAAAAAAD+//v/AQACAAAAAAABAPv/AQACAAAAAAACAPv/AQACAAAAAAADAPv/AQACAAAAAAAEAPv/AQACAAAAAAAFAPv/AQACAAAAAAAHAPv/AQACAAAAAAAIAPv/AQACAAAAAAAJAPv/AQACAAAAAAAKAPv/AQACAAAAAAALAPv/AQACAAAAAAD0/wEAAQABAAAAAAD1/wEAAQABAAAAAAD2/wEAAQABAAAAAAD3/wEAAQABAAAAAAD4/wEAAQABAAAAAAD6/wEAAQABAAAAAAD7/wEAAQABAAAAAAD8/wEAAQABAAAAAAD9/wEAAQABAAAAAAD+/wEAAQABAAAAAAABAAEAAQABAAAAAAACAAEAAQABAAAAAAADAAEAAQABAAAAAAAEAAEAAQABAAAAAAAFAAEAAQABAAAAAAAHAAEAAQABAAAAAAAIAAEAAQABAAAAAAAJAAEAAQABAAAAAAAKAAEAAQABAAAAAAALAAEAAQABAAAAAAD///z/AQADAAAAAAD///3/AQADAAAAAAD///7/AQADAAAAAAD/////AQADAAAAAAD//wAAAQADAAAAAAAGAPz/AQAMAAAAAAAGAP3/AQAMAAAAAAAGAP7/AQAMAAAAAAAGAP//AQAMAAAAAAAGAAAAAQAMAAAAAAD5//z/AQAMAAAAAAD5//3/AQAMAAAAAAD5//7/AQAMAAAAAAD5////AQAMAAAAAAD5/wAAAQAMAAAAAAA=")
 tile_set = SubResource("TileSet_sgkue")
 
-[node name="Duck" type="Sprite2D" parent="TileMap"]
-position = Vector2(-412.75, -92.75)
-scale = Vector2(0.45625, 0.45625)
-texture = ExtResource("6_set6j")
-
-[node name="Duck2" type="Sprite2D" parent="TileMap"]
-position = Vector2(-460.563, -67)
-scale = Vector2(0.45625, 0.45625)
-texture = ExtResource("6_set6j")
-
-[node name="Duck3" type="Sprite2D" parent="TileMap"]
-position = Vector2(421.438, -88.25)
-scale = Vector2(0.45625, 0.45625)
-texture = ExtResource("6_set6j")
-
-[node name="Duck4" type="Sprite2D" parent="TileMap"]
-position = Vector2(431.438, -64.25)
-scale = Vector2(0.45625, 0.45625)
-texture = ExtResource("6_set6j")
-
-[node name="Duck5" type="Sprite2D" parent="TileMap"]
-position = Vector2(200.437, -73.25)
-scale = Vector2(0.45625, 0.45625)
-texture = ExtResource("6_set6j")
-
-[node name="Duck6" type="Sprite2D" parent="TileMap"]
-position = Vector2(168.438, -108.25)
-scale = Vector2(0.45625, 0.45625)
-texture = ExtResource("6_set6j")
-
-[node name="Duck7" type="Sprite2D" parent="TileMap"]
-position = Vector2(113.438, -94.25)
-scale = Vector2(0.45625, 0.45625)
-texture = ExtResource("6_set6j")
-
-[node name="Duck8" type="Sprite2D" parent="TileMap"]
-position = Vector2(-157, -65)
-scale = Vector2(0.45625, 0.45625)
-texture = ExtResource("6_set6j")
-
-[node name="Duck9" type="Sprite2D" parent="TileMap"]
-position = Vector2(145.438, -64.25)
-scale = Vector2(0.45625, 0.45625)
-texture = ExtResource("6_set6j")
-
-[node name="Duck10" type="Sprite2D" parent="TileMap"]
-position = Vector2(-393.563, -65)
-scale = Vector2(0.45625, 0.45625)
-texture = ExtResource("6_set6j")
-
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 z_index = 2
 script = ExtResource("5_2t17l")
@@ -166,3 +116,63 @@ offset_right = 569.6
 offset_bottom = -301.0
 text = "Esc to go back"
 label_settings = SubResource("LabelSettings_iucfa")
+
+[node name="ducks" type="Node" parent="."]
+
+[node name="3ducks" type="Node" parent="ducks"]
+
+[node name="Duck" type="Sprite2D" parent="ducks/3ducks"]
+position = Vector2(-412.75, -92.75)
+scale = Vector2(0.45625, 0.45625)
+texture = ExtResource("6_set6j")
+
+[node name="Duck2" type="Sprite2D" parent="ducks/3ducks"]
+position = Vector2(-460.563, -67)
+scale = Vector2(0.45625, 0.45625)
+texture = ExtResource("6_set6j")
+
+[node name="Duck10" type="Sprite2D" parent="ducks/3ducks"]
+position = Vector2(-393.563, -65)
+scale = Vector2(0.45625, 0.45625)
+texture = ExtResource("6_set6j")
+
+[node name="1ducks" type="Node" parent="ducks"]
+
+[node name="Duck8" type="Sprite2D" parent="ducks/1ducks"]
+position = Vector2(-157, -65)
+scale = Vector2(0.45625, 0.45625)
+texture = ExtResource("6_set6j")
+
+[node name="2ducks" type="Node" parent="ducks"]
+
+[node name="Duck3" type="Sprite2D" parent="ducks/2ducks"]
+position = Vector2(421.438, -88.25)
+scale = Vector2(0.45625, 0.45625)
+texture = ExtResource("6_set6j")
+
+[node name="Duck4" type="Sprite2D" parent="ducks/2ducks"]
+position = Vector2(431.438, -64.25)
+scale = Vector2(0.45625, 0.45625)
+texture = ExtResource("6_set6j")
+
+[node name="4ducks" type="Node" parent="ducks"]
+
+[node name="Duck5" type="Sprite2D" parent="ducks/4ducks"]
+position = Vector2(200.437, -73.25)
+scale = Vector2(0.45625, 0.45625)
+texture = ExtResource("6_set6j")
+
+[node name="Duck6" type="Sprite2D" parent="ducks/4ducks"]
+position = Vector2(168.438, -108.25)
+scale = Vector2(0.45625, 0.45625)
+texture = ExtResource("6_set6j")
+
+[node name="Duck7" type="Sprite2D" parent="ducks/4ducks"]
+position = Vector2(113.438, -94.25)
+scale = Vector2(0.45625, 0.45625)
+texture = ExtResource("6_set6j")
+
+[node name="Duck9" type="Sprite2D" parent="ducks/4ducks"]
+position = Vector2(145.438, -64.25)
+scale = Vector2(0.45625, 0.45625)
+texture = ExtResource("6_set6j")
