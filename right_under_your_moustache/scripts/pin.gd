@@ -35,7 +35,7 @@ func _on_text_submitted(_character) -> void:
 	var password = ""
 	for field in fields:
 		password += field.text
-	if password == "3142":
+	if password == Global.code:
 		$"../Label".visible = false
 		$"../Label2".visible = false
 		for field in fields:
