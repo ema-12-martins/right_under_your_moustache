@@ -11,3 +11,5 @@ func _ready() -> void:
 		$CleaningLady/LadyDosCleanings.collision_layer = 1
 		$CleaningLady/LadyDosCleanings.collision_mask = 1
 		$CleaningLady/LadyDosCleanings.speed = 350
+		$PC/Interactable.interact_name = ""
+		
