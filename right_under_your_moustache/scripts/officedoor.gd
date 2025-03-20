@@ -15,8 +15,7 @@ func _on_interact(key_pressed: String):
 				var numbers = [1, 2, 3, 4]
 				numbers.shuffle()
 				Global.code = str(numbers[0]) + str(numbers[1]) + str(numbers[2]) +str(numbers[3])
-				print(Global.code)
-					
+
 			if Global.got_exam == 1:
 					
 				var background = BackgroundMusic.get_node("/root/BackgroundMusic")

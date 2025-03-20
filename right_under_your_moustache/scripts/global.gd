@@ -32,6 +32,9 @@ var keys: int = 0:
 		emit_signal("keys_and_exam_updated")  # Dispara o sinal sempre que keys mudar
 
 func replay():
+	#New code
+	Global.generated_code = false
+	
 	#Recarrega cena
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 	
@@ -60,6 +63,13 @@ func reload_scene(body_path: NodePath):
 	#Recarrega cena
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 	
+	#New code
+	Global.generated_code = false
+	
+	#Reset velocidade musica
+	var background = BackgroundMusic.get_node("/root/BackgroundMusic")
+	background.pitch_scale = 1
+				
 	#Reset the time
 	time_mutex.lock()
 	Global.elipsed_time_in_seconds = -1
