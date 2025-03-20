@@ -32,6 +32,7 @@ var keys: int = 0:
 		emit_signal("keys_and_exam_updated")  # Dispara o sinal sempre que keys mudar
 
 func replay():
+	
 	#New code
 	Global.generated_code = false
 	
